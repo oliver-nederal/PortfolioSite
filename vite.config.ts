@@ -8,6 +8,7 @@ const dir = './src/pages'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/PortfolioSite/',
 
   build: {
     rollupOptions: {

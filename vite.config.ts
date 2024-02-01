@@ -14,7 +14,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve('./', 'index.html'),
-        404: resolve('./', "index.html"),
         home: resolve(dir, 'Home.tsx'),
         about: resolve(dir , 'About.tsx'),
         contact: resolve(dir , 'Contact.tsx'),

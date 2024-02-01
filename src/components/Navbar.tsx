@@ -9,9 +9,6 @@ import Typography from '@mui/joy/Typography';
 import ModalClose from '@mui/joy/ModalClose';
 import Menu from '@mui/icons-material/Menu';
 
-
-import { Link } from "react-router-dom";
-
 import ButtonGroup from '@mui/joy/ButtonGroup';
 import Tooltip from '@mui/joy/Tooltip';
 import { FaGithub, FaDiscord, FaInstagram } from "react-icons/fa";

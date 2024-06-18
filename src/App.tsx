@@ -1,4 +1,7 @@
 import {lazy} from 'react'
+
+import {NextUIProvider} from "@nextui-org/react";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import '@fontsource/inter';
 import { AnimatePresence } from "framer-motion";
@@ -13,20 +16,22 @@ const PageNotFound = lazy(() => import('./pages/PageNotFound'));
 
 function App() {
   return (
-    <AnimatePresence mode='wait'>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/projects" element={<Projects/>}/>
-          <Route path="/skills" element={<Skills/>}/>
-          <Route path="/contact" element={<Contact/>}/>
+    <NextUIProvider>
+      <AnimatePresence mode='wait'>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/about" element={<About/>}/>
+            <Route path="/projects" element={<Projects/>}/>
+            <Route path="/skills" element={<Skills/>}/>
+            <Route path="/contact" element={<Contact/>}/>
 
-          <Route path="*" element={<PageNotFound />}/>
-        </Routes>
-      </Router>
-    </AnimatePresence>
+            <Route path="*" element={<PageNotFound />}/>
+          </Routes>
+        </Router>
+      </AnimatePresence>
+    </NextUIProvider>
   );
 }
 

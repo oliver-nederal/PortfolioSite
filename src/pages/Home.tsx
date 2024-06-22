@@ -14,13 +14,13 @@ const Home = () => {
       exit={{ x: "100%", opacity: 0 }}
       transition={{ duration: 1.5 }}
     >
-      <div className="flex h-[75vh]">
+      <div className="flex h-[75vh] bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
         <div className="mx-auto px-6 flex flex-col justify-center h-full">
           <p className="text-xl text-gray-500">Hi, my name is</p>
           <span className="inline-flex items-baseline">
             <img
               className="self-center rounded-full h-[12vh] md:h-[7vh] mr-2"
-              src={"https://picsum.photos/200/200?random"}
+              src={"/src/assets/me.png"}
               alt=""
             ></img>
             <span className="text-6xl text-black font-semibold justify-self-start">

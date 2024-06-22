@@ -1,6 +1,6 @@
-import { Button, ButtonGroup } from "@nextui-org/react";
+import { ButtonGroup } from "@nextui-org/react";
 
-import { GrProjects, GrContact, GrGithub } from "react-icons/gr";
+import { GrProjects, GrContact, GrGithub, GrUser } from "react-icons/gr";
 import IconButton from "@mui/joy/IconButton";
 
 import { motion } from "framer-motion";
@@ -14,52 +14,45 @@ const Home = () => {
       exit={{ x: "100%", opacity: 0 }}
       transition={{ duration: 1.5 }}
     >
-      <div className="flex h-[75vh] bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
-        <div className="mx-auto px-6 flex flex-col justify-center h-full">
-          <p className="text-xl text-gray-500">Hi, my name is</p>
+      <div className="flex h-[75vh] bg-white bg-[radial-gradient(#e5e7eb_1.5px,transparent_1.5px)] [background-size:20px_20px]">
+        <div className="mx-auto px-6 flex flex-col justify-center h-full space-y-3">
+          <p className="text-2xl md:text-3xl text-gray-500">Hi, my name is</p>
           <span className="inline-flex items-baseline">
             <img
-              className="self-center rounded-full h-[12vh] md:h-[7vh] mr-2"
+              className="self-center rounded-full h-[12vh] md:h-[10vh] mr-2"
               src={"/src/assets/me.png"}
               alt=""
             ></img>
-            <span className="text-6xl text-black font-semibold justify-self-start">
+            <span className="text-5xl md:text-8xl text-black font-semibold justify-self-start">
               Oliver Nederal
             </span>
           </span>
-          <h2 className="text-3xl text-gray-700">student, developer</h2>
-          <p className="text-gray-500 py-4 max-w-[700px]">
-            Fullstack Developer
-          </p>
+          <h2 className="text-2xl md:text-3xl text-gray-700">
+            student, fullstack developer
+          </h2>
 
           <div className="flex gap-x-2">
-            <ButtonGroup
-              variant="ghost"
-              aria-label="outlined primary button group"
-              size="lg"
+            <a
+              className="bg-gray-200 text-md p-2 rounded-xl flex flex-row items-center"
+              href="/projects"
             >
-              <Button
-                variant="flat"
-                size="md"
-                endContent={<GrProjects />}
-                onClick={() => {
-                  window.location.href = "/projects";
-                }}
-              >
-                Projects
-              </Button>
-              <Button
-                variant="flat"
-                size="md"
-                endContent={<GrContact />}
-                color="success"
-                onClick={() => {
-                  window.location.href = "/contact";
-                }}
-              >
-                Contact
-              </Button>
-            </ButtonGroup>
+              <GrProjects className="mr-1" />
+              ‎‎My Projects
+            </a>
+            <a
+              className="bg-gray-200 text-md p-2 rounded-xl flex flex-row items-center"
+              href="/projects"
+            >
+              <GrUser className="mr-1" />
+              ‎‎About Me
+            </a>
+            <a
+              className="bg-red-300 text-md p-2 rounded-xl flex flex-row items-center"
+              href="/contact"
+            >
+              <GrContact className="mr-1" />
+              Contact Me
+            </a>
             <ButtonGroup aria-label="outlined primary button group" size="lg">
               <IconButton>
                 <GrGithub

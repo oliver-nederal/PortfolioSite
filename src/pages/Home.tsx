@@ -14,7 +14,7 @@ const Home = () => {
       exit={{ x: "100%", opacity: 0 }}
       transition={{ duration: 1.5 }}
     >
-      <div className="flex h-[75vh] bg-white bg-[radial-gradient(#e5e7eb_1.5px,transparent_1.5px)] [background-size:20px_20px]">
+      <div className="flex h-[75vh]">
         <div className="mx-auto px-6 flex flex-col justify-center h-full space-y-3">
           <p className="text-2xl md:text-3xl text-gray-500">Hi, my name is</p>
           <span className="inline-flex items-baseline">
@@ -33,35 +33,26 @@ const Home = () => {
 
           <div className="flex gap-x-2">
             <a
-              className="bg-gray-200 text-md p-2 rounded-xl flex flex-row items-center"
+              className="border-2 border-slate-100 text-md p-2 rounded-xl flex flex-row items-center"
               href="/projects"
             >
               <GrProjects className="mr-1" />
-              ‎‎My Projects
+              ‎‎Projects
             </a>
             <a
-              className="bg-gray-200 text-md p-2 rounded-xl flex flex-row items-center"
+              className="border-2 border-slate-100 text-md p-2 rounded-xl flex flex-row items-center"
               href="/projects"
             >
               <GrUser className="mr-1" />
               ‎‎About Me
             </a>
             <a
-              className="bg-red-300 text-md p-2 rounded-xl flex flex-row items-center"
+              className="border-2 border-red-300 bg-red-300 bg-opacity-50 text-md p-2 rounded-xl flex flex-row items-center"
               href="/contact"
             >
               <GrContact className="mr-1" />
               Contact Me
             </a>
-            <ButtonGroup aria-label="outlined primary button group" size="lg">
-              <IconButton>
-                <GrGithub
-                  onClick={() => {
-                    window.location.href = "https://github.com/Pilot-64";
-                  }}
-                />
-              </IconButton>
-            </ButtonGroup>
           </div>
         </div>
       </div>

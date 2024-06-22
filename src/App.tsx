@@ -17,16 +17,18 @@ function App() {
     <AnimatePresence mode="wait">
       <AnimatedCursor color="152, 193, 217" outerSize={10} trailingSpeed={3} />
       <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/contact" element={<Contact />} />
+        <div className="w-[100vw] h-[100vh] bg-white bg-[radial-gradient(#e5e7eb_1.5px,transparent_1.5px)] [background-size:20px_20px]">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/contact" element={<Contact />} />
 
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </div>
       </Router>
     </AnimatePresence>
   );

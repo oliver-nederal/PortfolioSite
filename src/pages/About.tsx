@@ -13,12 +13,23 @@ const Home = () => {
       transition={{ duration: 1.5 }}
     >
       <div className="flex flex-col items-center scroll-smooth">
-        <div className="flex w-[92vw] h-[75vh] bg-red-100 justify-between content-center">
-          <h1 className="font-bold text-4xl">
+        <div className="w-[92vw] h-[75vh] justify-start flex flex-col space-y-5 content-center">
+          <h1 className="font-bold text-4xl md:text-6xl">
             Let me tell you a little about myself.
           </h1>
+          <h2 className="text-2xl">
+            I am a 14-year-old high-school junior in Prague, CZ 🇨🇿.
+          </h2>
+          <h2 className="text-2xl">
+            Besides studying, I love working on coding 👨‍💻 projects.
+          </h2>
+          <h2 className="text-2xl">Some of my hobbies include:</h2>
+          <ul className="list-disc pl-5 text-xl">
+            <li>Aviation ✈️ (Flight Sim)</li>
+            <li>🏝️ Travelling</li>
+            <li>Gaming 🕹️</li>
+          </ul>
         </div>
-        <div className="flex w-[92vw] h-[75vh] bg-red-100 justify-between content-center"></div>
       </div>
     </motion.main>
   );

@@ -17,6 +17,7 @@ import {
 } from "@nextui-org/react";
 import Tooltip from "@mui/joy/Tooltip";
 import { FaGithub, FaDiscord, FaInstagram, FaHome } from "react-icons/fa";
+import { IoMenu } from "react-icons/io5";
 
 const Navbar = () => {
   const [open, setOpen] = React.useState(false);
@@ -25,7 +26,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-center">
       {/*Top NavBar*/}
-      <div className="sticky w-[92vw] max-w-[1500px] h-[80px] flex justify-between items-center px-4 bg-[#efeff0] text-gray-600 border-[2px] shadow-md rounded-[30px] my-[20px]">
+      <div className="sticky top-0 w-[92vw] max-w-[1500px] h-[80px] flex justify-between items-center px-4 bg-[#efeff0] text-gray-600 border-[2px] shadow-md rounded-[30px] my-[20px]">
         <div className="flex flex-row">
           <div className="mx-2 rounded-xl">
             <img
@@ -80,12 +81,21 @@ const Navbar = () => {
         </ul>
 
         <div className="md:hidden">
-          <button
-            className="bg-gray-200 p-2 rounded-lg transition hover:shadow-md"
-            onClick={onOpen}
-          >
-            Menu
-          </button>
+          <div className="flex flex-row space-x-3">
+            <a
+              href="/"
+              className="border-2 border-slate-200 w-10 h-10 rounded-lg transition hover:shadow-md flex flex-col items-center justify-center"
+            >
+              <FaHome />
+            </a>
+            <button
+              className="bg-gray-200 p-2 rounded-lg transition hover:shadow-md flex flex-row items-center justify-center"
+              onClick={onOpen}
+            >
+              <IoMenu size={25} />
+              Menu
+            </button>
+          </div>
           <Modal
             placement="top-center"
             isOpen={isOpen}

@@ -33,21 +33,21 @@ const Home = () => {
 
           <div className="flex gap-x-2">
             <a
-              className="border-2 border-slate-100 text-sm md:text-md p-2 rounded-xl flex flex-row items-center"
+              className="border-3 bg-gray-50 border-slate-100 text-sm md:text-lg p-2 rounded-xl transition-all hover:bg-opacity-0 flex flex-row items-center"
               href="/projects"
             >
               <GrProjects className="mr-1" />
               ‎‎Projects
             </a>
             <a
-              className="border-2 border-slate-100 text-sm md:text-md p-2 rounded-xl flex flex-row items-center"
-              href="/projects"
+              className="border-3 bg-gray-50 border-slate-100 text-sm md:text-lg p-2 rounded-xl transition-all hover:bg-opacity-0 flex flex-row items-center"
+              href="/about"
             >
               <GrUser className="mr-1" />
               ‎‎About Me
             </a>
             <a
-              className="border-2 border-red-300 bg-red-300 bg-opacity-50 text-sm md:text-md p-2 rounded-xl flex flex-row items-center"
+              className="border-3 border-red-300 bg-red-100 text-sm md:text-lg p-2 rounded-xl transition-all hover:bg-opacity-0 flex flex-row items-center"
               href="/contact"
             >
               <GrContact className="mr-1" />

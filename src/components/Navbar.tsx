@@ -16,7 +16,7 @@ import {
   ListboxItem,
 } from "@nextui-org/react";
 import Tooltip from "@mui/joy/Tooltip";
-import { FaGithub, FaDiscord, FaInstagram, FaHome } from "react-icons/fa";
+import { FaGithub, FaDiscord, FaHome } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 
 const Navbar = () => {

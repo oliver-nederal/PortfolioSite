@@ -61,6 +61,26 @@ const Projects = () => {
               />
             </div>
           />
+          <ProjectCard
+            name="Taskly"
+            languages=<a className="flex flex-row items-center self-center w-full justify-center">
+              <SiReact /> React
+              <RxDividerVertical />
+              <SiTypescript /> Typescript
+              <RxDividerVertical />
+              <SiTailwindcss /> TailwindCSS
+            </a>
+            description="A open-source to-do app built in flutter for helping students organize themselves, for free."
+            buttons=<div className=" flex flex-row pb-2 space-x-2">
+              <Button color="blue-300" text="You are here!" />
+              <Button
+                color="gray-300"
+                href="#"
+                text="GitHub"
+                icon=<SiGithub />
+              />
+            </div>
+          />
         </div>
       </div>
     </motion.main>

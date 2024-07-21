@@ -19,7 +19,7 @@ const Home = () => {
           <p className="text-2xl md:text-3xl text-gray-500">Hi, my name is</p>
           <span className="inline-flex items-baseline">
             <img
-              className="self-center rounded-full h-[12vh] md:h-[10vh] mr-2"
+              className="self-center rounded-full h-[12vh] md:h-[96px] mr-2"
               src={"/src/assets/me.png"}
               alt=""
             ></img>
@@ -28,7 +28,7 @@ const Home = () => {
             </span>
           </span>
           <h2 className="text-2xl md:text-3xl text-gray-700">
-            student, fullstack developer
+            student, fullstack developer, thinker, innovator
           </h2>
 
           <div className="flex gap-x-2">

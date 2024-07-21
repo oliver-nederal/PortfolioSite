@@ -24,8 +24,8 @@ const Navbar = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
-    <div className="flex justify-center max-w-[1500px]">
-      <div className="fixed flex justify-center w-[95vw] h-[120px] backdrop-blur-sm rounded-[30px]">
+    <div className="flex justify-center">
+      <div className="fixed flex justify-center w-[95vw] max-w-[1500px] h-[120px] backdrop-blur-sm rounded-[30px]">
         {/*Top NavBar*/}
         <div className="fixed top-[20px] w-[92vw] h-[80px] flex justify-between items-center px-4 bg-[#efeff0] text-gray-600 border-[2px] shadow-md rounded-[30px]">
           <div className="flex flex-row">

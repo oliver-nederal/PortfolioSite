@@ -17,9 +17,9 @@ function App() {
     <AnimatePresence mode="wait">
       <AnimatedCursor color="152, 193, 217" outerSize={10} trailingSpeed={3} />
       <Router>
-        <div className="w-full h-full bg-white bg-[radial-gradient(#e5e7eb_1.5px,transparent_1.5px)] [background-size:20px_20px]">
+        <div className="w-full h-svh bg-white bg-[radial-gradient(#e5e7eb_1.5px,transparent_1.5px)] [background-size:20px_20px]">
           <Navbar />
-          <div className="py-[8em]">
+          <div className="pt-[8em]">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />

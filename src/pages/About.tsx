@@ -1,57 +1,45 @@
-import Highlight from 'react-highlight'
-import Divider from '@mui/joy/Divider';
+import Highlight from "react-highlight";
+import Divider from "@mui/joy/Divider";
 
 import { motion } from "framer-motion";
 
 const Home = () => {
-
-    return (
-        <motion.main
-            className="main__container"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ x: "100%", opacity: 0 }}
-            transition={{ duration: 1.5 }}>
-
-            <div className='flex flex-col items-center scroll-smooth'>
-                <div className='flex w-[92vw] h-[75vh] justify-between content-center'>
-                    {/*Container*/}
-                    <div className='max-w-[1500px] flex flex-row h-full'>
-                        <div className='mx-auto flex flex-col justify-center h-full'>
-                            <Highlight className='sm:text-xs md:text-base py-[1vh]' language="python">
-                                {`#Hello World!
-    #My name is Oliver Nederal, 
-    I am a student and developer.
-
-    def me(self):
-        self.firstName = "Oliver"
-        self.lastName = "Nederal"
-
-        self.email = "oliver@nederal.com"
-        self.phoneNumber = "(+420)792-413-222"
-        
-        self.nationality = ["SE", "RS"]
-        self.currentLocation = "Prague, CZ"
-        
-        self.proffession = "Student"
-        self.hobbies = [
-            "Programming", 
-            "Designing", 
-            "Aviation"
-        ]
-        
-        self.openToBusiness = True`}
-                            </Highlight>
-                        </div>
-                    </div>
-
-                    <Divider orientation="vertical" />
-
-                    <p>Lorem Ipsum dolor sit amet</p>
-                </div>
+  return (
+    <motion.main
+      className="main__container"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ x: "100%", opacity: 0 }}
+      transition={{ duration: 1.5 }}
+    >
+      <div className="flex flex-col items-center scroll-smooth">
+        <div className="w-[92vw] h-[75vh] justify-start flex flex-col space-y-5 content-center">
+          <h1 className="font-bold text-4xl md:text-6xl">
+            A whole page just about me!
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full h-full">
+            <div className="bg-[#fffaff] flex flex-col gap-4">
+              <h1 className="text-xl">I am currently finishing high-school with aims to study computer science.</h1>
+              <h1 className="text-xl">When engineering or creating coding solutions, I always work with a strong passion to make minimalistic and efficient solutions to problems by thinking outside of the box.</h1>
+              <h1 className="text-xl">While learning to program, I couldn't decide whether I wanted to work on more backend solutions or frontend designs. Now, I work on integrating my knowledge from both to make functioning and efficient full-stack solutions.</h1>
+              <h1 className="text-xl">To find out more about some of my projects click here!</h1>
             </div>
-        </motion.main>
-    )
-}
+            <div className="bg-[#fffaff]">
+              <img
+                className="w-full h-[90%] rounded-3xl"
+                src={"https://placehold.co/660x700"}
+                alt=""
+              ></img>
+              <h1>A picture of me :)</h1>
+            </div>
+            <div className="bg-[#fffaff]">
+              <h1>hello</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.main>
+  );
+};
 
-export default Home
+export default Home;

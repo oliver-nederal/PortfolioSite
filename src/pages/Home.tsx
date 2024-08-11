@@ -1,7 +1,4 @@
-import { ButtonGroup } from "@nextui-org/react";
-
-import { GrProjects, GrContact, GrGithub, GrUser } from "react-icons/gr";
-import IconButton from "@mui/joy/IconButton";
+import { GrProjects, GrContact, GrUser } from "react-icons/gr";
 
 import { motion } from "framer-motion";
 
@@ -12,7 +9,7 @@ const Home = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ x: "100%", opacity: 0 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 1 }}
     >
       <div className="flex h-[75vh]">
         <div className="mx-auto px-6 flex flex-col justify-center h-full space-y-3">

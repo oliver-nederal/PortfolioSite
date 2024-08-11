@@ -1,6 +1,3 @@
-import Highlight from "react-highlight";
-import Divider from "@mui/joy/Divider";
-
 import { motion } from "framer-motion";
 
 const Home = () => {
@@ -10,7 +7,7 @@ const Home = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ x: "100%", opacity: 0 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 1 }}
     >
       <div className="flex flex-col items-center scroll-smooth">
         <div className="w-[92vw] h-[75vh] justify-start flex flex-col space-y-5 content-center">

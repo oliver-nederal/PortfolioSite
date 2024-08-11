@@ -1,18 +1,16 @@
 import { motion } from "framer-motion";
-import {
-  ReactOriginalIcon,
-  TailwindcssOriginalIcon,
-  JavascriptOriginalIcon,
-  TypescriptOriginalIcon,
-  NodejsOriginalIcon,
-  CplusplusOriginalIcon,
-  LuaOriginalIcon,
-  ThreedsmaxOriginalIcon,
-  BlenderOriginalIcon,
-  Html5OriginalIcon,
-  Css3OriginalIcon,
-  PythonOriginalIcon,
-} from "react-devicons";
+import ReactOriginalIcon from "react-devicons/react/original";
+import TailwindcssOriginalIcon from "react-devicons/tailwindcss/original";
+import JavascriptOriginalIcon from "react-devicons/javascript/original";
+import TypescriptOriginalIcon from "react-devicons/typescript/original";
+import NodejsOriginalIcon from "react-devicons/nodejs/original";
+import CplusplusOriginalIcon from "react-devicons/cplusplus/original";
+import LuaOriginalIcon from "react-devicons/lua/original";
+import ThreedsmaxOriginalIcon from "react-devicons/threedsmax/original";
+import BlenderOriginalIcon from "react-devicons/blender/original";
+import Html5OriginalIcon from "react-devicons/html5/original";
+import Css3OriginalIcon from "react-devicons/css3/original";
+import PythonOriginalIcon from "react-devicons/python/original";
 
 function SkillsCard(param) {
   return (
@@ -38,7 +36,7 @@ const Projects = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ x: "100%", opacity: 0 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 1 }}
     >
       <div className="flex flex-col items-center h-full">
         <h1 className="text-4xl font-bold mb-3">Front-End</h1>

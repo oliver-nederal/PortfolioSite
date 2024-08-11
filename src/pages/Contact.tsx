@@ -1,23 +1,16 @@
-import { useState } from "react";
-
 import { motion } from "framer-motion";
-import { IoRocket, IoMail, IoLogoWhatsapp } from "react-icons/io5";
-import { PiKeyReturn } from "react-icons/pi";
-import { IoIosArrowBack } from "react-icons/io";
+import { IoMail, IoLogoWhatsapp } from "react-icons/io5";
 import { FaDiscord, FaInstagram } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
 const Contact = () => {
-  let name = "Test Name";
-  const [nameEntered, setNameEntered] = useState(false);
-
   return (
     <motion.main
       className="main__container"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ x: "100%", opacity: 0 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 1 }}
     >
       <div className="flex flex-col h-full items-center justify-center scroll-smooth">
         <div className="w-[92vw] justify-center items-center flex flex-col">

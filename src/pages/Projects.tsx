@@ -1,22 +1,35 @@
 import { motion } from "framer-motion";
-import { SiTypescript, SiTailwindcss, SiReact } from "react-icons/si";
+import {
+  SiTypescript,
+  SiTailwindcss,
+  SiReact,
+  SiFlask,
+  SiPython,
+} from "react-icons/si";
 import { RxDividerVertical, RxExternalLink } from "react-icons/rx";
 
 function ProjectCard(param) {
   return (
-    <a href="#" className="group transition ease-in-out hover:bg-sky-200 bg-white drop-shadow-xl rounded-xl space-y-2">
-      <div className="group-hover:hidden flex flex-col">
-        <a className="bg-sky-200 m-4 p-14 rounded-md">
-          link
-        </a>
+    <a
+      href={"https://github.com/Pilot-64/" + param.githublinkname}
+      className="group transition ease-in-out md:hover:bg-sky-200 bg-white drop-shadow-xl rounded-xl space-y-2"
+    >
+      <div className="md:group-hover:hidden flex flex-col">
+        <img
+          src={
+            "https://opengraph.githubassets.com/1/Pilot-64/" +
+            param.githublinkname
+          }
+          className="bg-sky-200 m-4 rounded-md border"
+        />
         <div className="mx-4 flex flex-col space-y-3">
           {param.languages}
           <h1 className="font-bold text-lg">{param.name}</h1>
           <h1 className="pb-4">{param.description}</h1>
         </div>
       </div>
-      <div className="w-full h-full hidden transition ease-in-out group-hover:flex justify-center items-center">
-        <RxExternalLink size={"3em"}/>
+      <div className="w-full h-full hidden transition ease-in-out md:group-hover:flex justify-center items-center">
+        <RxExternalLink size={"3em"} />
       </div>
     </a>
   );
@@ -34,15 +47,14 @@ const Projects = () => {
       <div className="flex flex-col items-center h-full">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 place-items-stretch w-[92vw] max-w-[1500px]">
           <ProjectCard
-            name="Personal Portfolio"
+            name="Fake News Detector"
+            githublinkname="FakeNewsDetector"
             languages=<a className="flex flex-row items-center self-center w-full justify-center">
-              <SiReact /> React
+              <SiPython /> Python
               <RxDividerVertical />
-              <SiTypescript /> Typescript
-              <RxDividerVertical />
-              <SiTailwindcss /> TailwindCSS
+              <SiFlask /> Flask
             </a>
-            description="A personal portfolio site I built to showcase some of my projects as well as to refine my react and typescript skills."
+            description="A flask API which returns the likelihood of a news article being misleading."
           />
           <ProjectCard
             name="Taskly"
@@ -53,7 +65,18 @@ const Projects = () => {
               <RxDividerVertical />
               <SiTailwindcss /> TailwindCSS
             </a>
-            description="A open-source to-do app built in flutter for helping students organize themselves, for free."
+            description="A open-source flutter to-do app for helping students organize themselves."
+          />
+          <ProjectCard
+            name="StudyBuds"
+            languages=<a className="flex flex-row items-center self-center w-full justify-center">
+              <SiReact /> React
+              <RxDividerVertical />
+              <SiTypescript /> Typescript
+              <RxDividerVertical />
+              <SiTailwindcss /> TailwindCSS
+            </a>
+            description="A open-source flutter to-do app for helping students organize themselves."
           />
         </div>
       </div>

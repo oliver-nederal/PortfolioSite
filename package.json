@@ -1,16 +1,14 @@
 {
-  "name": "portfolio",
-  "homepage": "https://pilot-64.github.io/PortfolioSite/",
-  "private": true,
+  "name": "portfolio-site",
+  "author": "Oliver Nederal",
+  "license": "MIT",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",
@@ -24,6 +22,7 @@
     "framer-motion": "^11.0.6",
     "ldrs": "^1.0.2",
     "react": "^18.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-devicons": "^2.16.2",
     "react-dom": "^18.2.0",
     "react-highlight": "^0.15.0",
@@ -43,7 +42,6 @@
     "eslint": "^8.55.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "gh-pages": "^6.1.1",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.2.2",

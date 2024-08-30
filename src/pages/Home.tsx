@@ -1,5 +1,5 @@
 import { GrProjects, GrContact, GrUser } from "react-icons/gr";
-
+import MePicture from "../assets/me.png";
 import { motion } from "framer-motion";
 
 const Home = () => {
@@ -16,8 +16,8 @@ const Home = () => {
           <p className="text-2xl md:text-3xl text-gray-500">Hi, my name is</p>
           <span className="inline-flex items-baseline">
             <img
-              className="self-center rounded-full h-[12vh] md:h-[96px] mr-2"
-              src={"/src/assets/me.png"}
+              className="self-center rounded-full h-[11vh] md:h-[80px] mr-2"
+              src={MePicture}
               alt=""
             ></img>
             <span className="text-5xl md:text-8xl text-black font-semibold justify-self-start">
@@ -25,7 +25,7 @@ const Home = () => {
             </span>
           </span>
           <h2 className="text-2xl md:text-3xl text-gray-700">
-            student, fullstack developer, thinker, innovator
+            student, fullstack developer
           </h2>
 
           <div className="flex gap-x-2">

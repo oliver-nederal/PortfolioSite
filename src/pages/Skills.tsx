@@ -40,7 +40,7 @@ const Projects = () => {
     >
       <div className="flex flex-col items-center h-full">
         <h1 className="text-4xl font-bold mb-3">Front-End</h1>
-        <div className="grid lg:grid-cols-4 md:grid-cols-4 grid-cols-2 gap-4 place-items-stretch w-[92vw] max-w-[1500px]">
+        <div className="grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-4 place-items-stretch w-[92vw] max-w-[1500px]">
           <SkillsCard
             name="ReactJS"
             description="⬤⬤⬤⬤⬤⬤⬤⬤○○ 8/10"

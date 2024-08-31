@@ -11,7 +11,7 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 import Tooltip from "@mui/joy/Tooltip";
-import { FaGithub, FaDiscord, FaHome } from "react-icons/fa";
+import { FaGithub, FaHome } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 
 const Navbar = () => {
@@ -32,17 +32,6 @@ const Navbar = () => {
             </div>
             <div className="mx-2 flex flex-col justify-center">
               <ButtonGroup variant="bordered">
-                <Tooltip
-                  title="Discord"
-                  variant="outlined"
-                  placement="bottom"
-                  size="lg"
-                >
-                  <IconButton>
-                    {" "}
-                    <FaDiscord />{" "}
-                  </IconButton>
-                </Tooltip>
                 <Tooltip
                   title="GitHub"
                   variant="outlined"

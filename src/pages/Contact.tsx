@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { IoMail, IoLogoWhatsapp } from "react-icons/io5";
-import { FaCheck, FaDiscord, FaCopy } from "react-icons/fa";
+import { FaCheck, FaDiscord, FaCopy, FaHashtag } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 
 function delay(ms) {
@@ -12,6 +12,7 @@ function delay(ms) {
 
 const Contact = () => {
   const [copied, setCopied] = React.useState(false);
+  const [copiedDiscord, setCopiedDiscord] = React.useState(false);
 
   return (
     <motion.main
@@ -45,9 +46,10 @@ const Contact = () => {
                   className="z-2 transition-all p-2 rounded-xl bg-white/20 hover:shadow-lg ring-1 ring-black/5"
                 >
                   {copied ? (
-                    <div className="flex flex-row items-center">
-                      Copied!
-                      <FaCheck className="ml-2" />
+                    <div className="flex flex-row space-x-4 items-center">
+                      <IoMail />
+                      <p>Copied!</p>
+                      <FaCheck />
                     </div>
                   ) : (
                     <div className="flex flex-row space-x-4 items-center">
@@ -75,9 +77,31 @@ const Contact = () => {
                 <div className="w-full h-[1px] bg-black"></div>
                 <div className="flex flex-row">
                   <h2>Username:</h2>
-                  <button className="flex flex-row items-center transition-all p-2 rounded-xl bg-white/20 hover:shadow-lg ring-1 ring-black/5">
-                    #pilot64
-                    <FaCopy className="ml-2" />
+                  <button
+                    onClick={() => {
+                      async function copyEmail() {
+                        navigator.clipboard.writeText("pilot64");
+                        setCopiedDiscord(true);
+                        await delay(1000);
+                        setCopiedDiscord(false);
+                      }
+                      copyEmail();
+                    }}
+                    className="z-2 transition-all p-2 rounded-xl bg-white/20 hover:shadow-lg ring-1 ring-black/5"
+                  >
+                    {copiedDiscord ? (
+                      <div className="flex flex-row space-x-4 items-center">
+                        <FaHashtag />
+                        <p>Copied!</p>
+                        <FaCheck className="ml-2" />
+                      </div>
+                    ) : (
+                      <div className="flex flex-row space-x-4 items-center">
+                        <FaHashtag />
+                        <p>pilot64</p>
+                        <FaCopy />
+                      </div>
+                    )}
                   </button>
                 </div>
               </a>

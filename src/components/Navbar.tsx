@@ -1,4 +1,3 @@
-import React from "react";
 import Logo from "../assets/logo.png";
 import IconButton from "@mui/joy/IconButton";
 
@@ -10,22 +9,17 @@ import {
   ModalBody,
   ModalHeader,
   useDisclosure,
-  ModalFooter,
-  Listbox,
-  ListboxSection,
-  ListboxItem,
 } from "@nextui-org/react";
 import Tooltip from "@mui/joy/Tooltip";
-import { FaGithub, FaDiscord, FaHome } from "react-icons/fa";
+import { FaGithub, FaHome } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 
 const Navbar = () => {
-  const [open, setOpen] = React.useState(false);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <div className="flex justify-center">
-      <div className="fixed flex justify-center w-[95vw] max-w-[1500px] h-[120px] backdrop-blur-sm rounded-[30px]">
+      <div className="fixed flex justify-center w-[95vw] h-[120px] backdrop-blur-sm rounded-[30px] z-20">
         {/*Top NavBar*/}
         <div className="fixed top-[20px] w-[92vw] h-[80px] flex justify-between items-center px-4 bg-[#efeff0] text-gray-600 border-[2px] shadow-md rounded-[30px]">
           <div className="flex flex-row">
@@ -37,18 +31,7 @@ const Navbar = () => {
               />
             </div>
             <div className="mx-2 flex flex-col justify-center">
-              <ButtonGroup variant="outlined" spacing={1.5}>
-                <Tooltip
-                  title="Discord"
-                  variant="outlined"
-                  placement="bottom"
-                  size="lg"
-                >
-                  <IconButton>
-                    {" "}
-                    <FaDiscord />{" "}
-                  </IconButton>
-                </Tooltip>
+              <ButtonGroup variant="bordered">
                 <Tooltip
                   title="GitHub"
                   variant="outlined"
@@ -73,6 +56,7 @@ const Navbar = () => {
               ["Contact", "/contact"],
             ].map(([title, url]) => (
               <a
+                key={title}
                 href={url}
                 className="mx-2 p-2 rounded-lg transition bg-gray-200 bg-opacity-0 duration-500 ease-in-out hover:font-bold hover:bg-opacity-100"
               >

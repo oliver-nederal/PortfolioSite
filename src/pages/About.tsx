@@ -1,7 +1,8 @@
-import Highlight from "react-highlight";
-import Divider from "@mui/joy/Divider";
-
 import { motion } from "framer-motion";
+import About1 from "../assets/IMG_3129.png";
+import About2 from "../assets/IMG_3130.png";
+import About3 from "../assets/IMG_3131.png";
+import About4 from "../assets/IMG_3132.png";
 
 const Home = () => {
   return (
@@ -10,30 +11,80 @@ const Home = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ x: "100%", opacity: 0 }}
-      transition={{ duration: 1.5 }}
+      transition={{ duration: 1 }}
     >
       <div className="flex flex-col items-center scroll-smooth">
         <div className="w-[92vw] h-[75vh] justify-start flex flex-col space-y-5 content-center">
           <h1 className="font-bold text-4xl md:text-6xl">
             A whole page just about me!
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full h-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full h-full">
             <div className="bg-[#fffaff] flex flex-col gap-4">
-              <h1 className="text-xl">I am currently finishing high-school with aims to study computer science.</h1>
-              <h1 className="text-xl">When engineering or creating coding solutions, I always work with a strong passion to make minimalistic and efficient solutions to problems by thinking outside of the box.</h1>
-              <h1 className="text-xl">While learning to program, I couldn't decide whether I wanted to work on more backend solutions or frontend designs. Now, I work on integrating my knowledge from both to make functioning and efficient full-stack solutions.</h1>
-              <h1 className="text-xl">To find out more about some of my projects click here!</h1>
+              <p className="text-xl">
+                I was born and raised in Stockholm, a place which I have always
+                called home. In 2019 I relocated to the Czech Republic to pursue
+                secondary education, where I am set to graduate in June of 2025.
+              </p>
+              <p className="text-xl">
+                The first time I definitively decided to pursue further
+                education and a career in computer science was during a 2018
+                lecture on 'Life 3.0: Being Human in the Age of Artificial
+                Intelligence' by the legendary MIT professor Max Tegmark. It was
+                the first of many experiences that revealed to me the beauty of
+                computational logic and programming.
+              </p>
+              <h2 className="text-2xl font-medium">For the nerds:</h2>
+              <p className="text-xl">
+                When engineering or creating coding solutions, I always work
+                with a strong passion to make minimalistic and efficient
+                solutions to problems by thinking outside of the box.
+              </p>
+              <p className="text-xl">
+                Most of my projects are full-stack web applications, but I also
+                dipped my toes in machine learning, data science, and algorithm
+                projects.
+              </p>
+              <p className="text-xl">
+                To find out more about some of my projects click{" "}
+                <a href="/projects" className="text-blue-500 hover:underline">
+                  here
+                </a>
+                !
+              </p>
             </div>
-            <div className="bg-[#fffaff]">
-              <img
-                className="w-full h-[90%] rounded-3xl"
-                src={"https://placehold.co/660x700"}
-                alt=""
-              ></img>
-              <h1>A picture of me :)</h1>
-            </div>
-            <div className="bg-[#fffaff]">
-              <h1>hello</h1>
+            <div className="bg-zinc-100 md:h-[70vh] max-h-[800px] px-4 pt-2 pb-8 grid grid-cols-2 grid-rows-2 gap-4">
+              <div className="flex flex-col">
+                <p>My first look at self-driving technology.</p>
+                <img
+                  className="object-cover w-full h-full border-8 border-[#ffffff] shadow-xl"
+                  src={About1}
+                  alt="young me sitting in the driver seat of a tesla"
+                ></img>
+              </div>
+              <div className="flex flex-col">
+                <p>Aviation fan from a very young age.</p>
+                <img
+                  className="object-cover w-full h-full border-8 border-[#ffffff] shadow-xl"
+                  src={About2}
+                  alt="young me standing in a 737 cockpit next to the pilots"
+                ></img>
+              </div>
+              <div className="flex flex-col">
+                <img
+                  className="object-cover w-full h-full border-8 border-[#ffffff] shadow-xl"
+                  src={About3}
+                  alt="me standing beside a 3D printer, assembling it"
+                ></img>
+                <p>My 3D printing passion.</p>
+              </div>
+              <div className="flex flex-col">
+                <img
+                  className="object-cover w-full h-full border-8 border-[#ffffff] shadow-xl"
+                  src={About4}
+                  alt="FormNext VIP entry lanyard around my neck"
+                ></img>
+                <p>Where my 3D printing passion led me.</p>
+              </div>
             </div>
           </div>
         </div>

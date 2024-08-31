@@ -31,23 +31,24 @@ const Home = () => {
                 lecture on 'Life 3.0: Being Human in the Age of Artificial
                 Intelligence' by the legendary MIT professor Max Tegmark. It was
                 the first of many experiences that revealed to me the beauty of
-                computational logic and programming.
+                computational logic, programming, and its ethical and beneficial
+                usage.
+              </p>
+              <p className="text-xl">
+                Following this, I furthered my knowledge by working on many
+                different personal projects as well as participating courses
+                such as the MIT Beaverworks RACECAR Prerequisite course.
               </p>
               <h2 className="text-2xl font-medium">For the nerds:</h2>
-              <p className="text-xl">
-                When engineering or creating coding solutions, I always work
-                with a strong passion to make minimalistic and efficient
-                solutions to problems by thinking outside of the box.
-              </p>
               <p className="text-xl">
                 Most of my projects are full-stack web applications, but I also
                 dipped my toes in machine learning, data science, and algorithm
                 projects.
               </p>
               <p className="text-xl">
-                To find out more about some of my projects click{" "}
+                To find out more about some of my projects open my{" "}
                 <a href="/projects" className="text-blue-500 hover:underline">
-                  here
+                  project page
                 </a>
                 !
               </p>
@@ -83,7 +84,10 @@ const Home = () => {
                   src={About4}
                   alt="FormNext VIP entry lanyard around my neck"
                 ></img>
-                <p>Where my 3D printing passion led me.</p>
+                <p>
+                  Invited to attend FormNext (3D printing convention) as a VIP
+                  visitor on behalf of a company.
+                </p>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "@fontsource/inter";
 import { AnimatePresence } from "framer-motion";
 
@@ -17,7 +17,7 @@ function App() {
   return (
     <Suspense fallback={<Loader />}>
       <AnimatePresence mode="wait">
-        <HashRouter>
+        <BrowserRouter>
           <div className="w-full h-svh bg-white bg-[radial-gradient(#e5e7eb_1.5px,transparent_1.5px)] [background-size:20px_20px]">
             <Navbar />
             <div className="pt-[8em]">
@@ -32,7 +32,7 @@ function App() {
               </Routes>
             </div>
           </div>
-        </HashRouter>
+        </BrowserRouter>
       </AnimatePresence>
     </Suspense>
   );

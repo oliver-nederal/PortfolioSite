@@ -9,7 +9,7 @@ const About = lazy(() => import("./pages/About"));
 const Projects = lazy(() => import("./pages/Projects"));
 const Skills = lazy(() => import("./pages/Skills"));
 const Contact = lazy(() => import("./pages/Contact"));
-const PageNotFound = lazy(() => import("./pages/PageNotFound"));
+const Page404 = lazy(() => import("./pages/404"));
 
 import Loader from "./components/Loader";
 
@@ -17,7 +17,7 @@ function App() {
   return (
     <Suspense fallback={<Loader />}>
       <AnimatePresence mode="wait">
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter basename={`oliver.nederal.com`}>
           <div className="w-full h-svh bg-white bg-[radial-gradient(#e5e7eb_1.5px,transparent_1.5px)] [background-size:20px_20px]">
             <Navbar />
             <div className="pt-[8em]">
@@ -28,7 +28,7 @@ function App() {
                 <Route path="/skills" element={<Skills />} />
                 <Route path="/contact" element={<Contact />} />
 
-                <Route path="*" element={<PageNotFound />} />
+                <Route path="*" element={<Page404 />} />
               </Routes>
             </div>
           </div>

@@ -17,7 +17,7 @@ function App() {
   return (
     <Suspense fallback={<Loader />}>
       <AnimatePresence mode="wait">
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <div className="w-full h-svh bg-white bg-[radial-gradient(#e5e7eb_1.5px,transparent_1.5px)] [background-size:20px_20px]">
             <Navbar />
             <div className="pt-[8em]">

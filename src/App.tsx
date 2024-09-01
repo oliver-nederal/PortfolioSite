@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import "@fontsource/inter";
 import { AnimatePresence } from "framer-motion";
 
@@ -11,29 +11,28 @@ const Skills = lazy(() => import("./pages/Skills"));
 const Contact = lazy(() => import("./pages/Contact"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
-import Loader from "./components/Loader"
+import Loader from "./components/Loader";
 
 function App() {
   return (
     <Suspense fallback={<Loader />}>
-      
       <AnimatePresence mode="wait">
-          <Router>
-            <div className="w-full h-svh bg-white bg-[radial-gradient(#e5e7eb_1.5px,transparent_1.5px)] [background-size:20px_20px]">
-              <Navbar />
-              <div className="pt-[8em]">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/projects" element={<Projects />} />
-                  <Route path="/skills" element={<Skills />} />
-                  <Route path="/contact" element={<Contact />} />
+        <HashRouter>
+          <div className="w-full h-svh bg-white bg-[radial-gradient(#e5e7eb_1.5px,transparent_1.5px)] [background-size:20px_20px]">
+            <Navbar />
+            <div className="pt-[8em]">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/skills" element={<Skills />} />
+                <Route path="/contact" element={<Contact />} />
 
-                  <Route path="*" element={<PageNotFound />} />
-                </Routes>
-              </div>
+                <Route path="*" element={<PageNotFound />} />
+              </Routes>
             </div>
-          </Router>
+          </div>
+        </HashRouter>
       </AnimatePresence>
     </Suspense>
   );

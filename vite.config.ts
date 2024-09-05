@@ -13,12 +13,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve('./', 'index.html'),
-        home: resolve(dir, 'Home.tsx'),
-        about: resolve(dir , 'About.tsx'),
-        contact: resolve(dir , 'Contact.tsx'),
-        projects: resolve(dir , 'Projects.tsx'),
-        skills: resolve(dir , 'Skills.tsx'),
+        main: resolve(__dirname, "index.html"),
+        404: resolve(__dirname, "public/404.html"),
       },
     },
   },

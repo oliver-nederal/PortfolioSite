@@ -36,7 +36,7 @@ const Contact = () => {
                 <button
                   onClick={() => {
                     async function copyEmail() {
-                      navigator.clipboard.writeText("oliver@nederal.com");
+                      navigator.clipboard.writeText("oliver.nederal@gmail.com");
                       setCopied(true);
                       await delay(1000);
                       setCopied(false);
@@ -54,13 +54,13 @@ const Contact = () => {
                   ) : (
                     <div className="flex flex-row space-x-4 items-center">
                       <IoMail />
-                      <p>oliver@nederal.com</p>
+                      <p>oliver.nederal@gmail.com</p>
                       <FaCopy />
                     </div>
                   )}
                 </button>
                 <a
-                  href="mailto:oliver@nederal.com"
+                  href="mailto:oliver.nederal@gmail.com"
                   className="z-2 flex place-items-center transition-all p-2 rounded-xl bg-white/20 hover:shadow-lg ring-1 ring-black/5"
                 >
                   <FiExternalLink className="mx-1" />

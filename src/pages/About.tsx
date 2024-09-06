@@ -15,11 +15,11 @@ const Home = () => {
     >
       <div className="flex flex-col items-center scroll-smooth">
         <div className="w-[92vw] h-[75vh] justify-start flex flex-col space-y-5 content-center">
-          <h1 className="font-bold text-4xl md:text-6xl">
+          <h1 className="font-bold text-4xl md:text-5xl">
             A whole page just about me!
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full h-full">
-            <div className="bg-[#fffaff] flex flex-col gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full h-full">
+            <div className="flex flex-col gap-4">
               <p className="text-xl">
                 I was born and raised in Stockholm, a place which I have always
                 called home. In 2019 I relocated to the Czech Republic to pursue
@@ -53,30 +53,30 @@ const Home = () => {
                 !
               </p>
             </div>
-            <div className="bg-zinc-100 md:h-[70vh] max-h-[800px] px-4 pt-2 pb-8 grid grid-cols-2 grid-rows-2 gap-4">
+            <div className="bg-zinc-100 md:h-[72vh] max-h-[800px] px-4 pt-2 pb-8 grid grid-cols-2 grid-rows-2 gap-4">
               <div className="flex flex-col">
-                <p>My first look at self-driving technology.</p>
+                <p>Testing my projection mapping project.</p>
                 <img
                   className="object-cover w-full h-full border-8 border-[#ffffff] shadow-xl"
                   src={About1}
-                  alt="young me sitting in the driver seat of a tesla"
+                  alt="me standing in front of a projection mapping project"
                 ></img>
               </div>
               <div className="flex flex-col">
-                <p>Aviation fan from a very young age.</p>
+                <p>5th place in a regional hackathon.</p>
                 <img
                   className="object-cover w-full h-full border-8 border-[#ffffff] shadow-xl"
                   src={About2}
-                  alt="young me standing in a 737 cockpit next to the pilots"
+                  alt="Participating in a hackathon, standing next to a staff member holding a laptop."
                 ></img>
               </div>
               <div className="flex flex-col">
                 <img
                   className="object-cover w-full h-full border-8 border-[#ffffff] shadow-xl"
                   src={About3}
-                  alt="me standing beside a 3D printer, assembling it"
+                  alt="me standing in front of a board, presenting/giving a talk."
                 ></img>
-                <p>My 3D printing passion.</p>
+                <p>Giving a talk about Large Language Models at TedX@AABrno.</p>
               </div>
               <div className="flex flex-col">
                 <img
@@ -85,8 +85,8 @@ const Home = () => {
                   alt="FormNext VIP entry lanyard around my neck"
                 ></img>
                 <p>
-                  Invited to attend FormNext (3D printing convention) as a VIP
-                  visitor on behalf of a company.
+                  Invited to attend FormNext as a VIP visitor on behalf of a
+                  company.
                 </p>
               </div>
             </div>

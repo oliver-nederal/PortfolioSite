@@ -12,6 +12,7 @@ function ProjectCard(param) {
   return (
     <a
       href={"https://github.com/Pilot-64/" + param.githublinkname}
+      target={"_blank"}
       className="group transition ease-in-out md:hover:bg-sky-200 bg-white drop-shadow-xl rounded-xl space-y-2"
     >
       <div className="md:group-hover:hidden flex flex-col">
@@ -54,7 +55,7 @@ const Projects = () => {
               <RxDividerVertical />
               <SiFlask /> Flask
             </a>
-            description="A flask API which returns the likelihood of a news article being misleading."
+            description="A flask API which returns the likelihood of a news article being misleading based on the article title."
           />
           <ProjectCard
             name="Taskly"
@@ -65,7 +66,7 @@ const Projects = () => {
               <RxDividerVertical />
               <SiTailwindcss /> TailwindCSS
             </a>
-            description="A open-source flutter to-do app for helping students organize themselves."
+            description="A open-source desktop electron to-do app which allows users to create, edit, and manage their tasks."
           />
           <ProjectCard
             name="StudyBuds"
@@ -76,7 +77,7 @@ const Projects = () => {
               <RxDividerVertical />
               <SiTailwindcss /> TailwindCSS
             </a>
-            description="A open-source flutter to-do app for helping students organize themselves."
+            description="A open-source website which connects students with subject-based communities for collaborative learning."
           />
         </div>
       </div>

@@ -59,6 +59,7 @@ const Projects = () => {
           />
           <ProjectCard
             name="Taskly"
+            githublinkname="Taskly"
             languages=<a className="flex flex-row items-center self-center w-full justify-center">
               <SiReact /> React
               <RxDividerVertical />

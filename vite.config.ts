@@ -1,14 +1,18 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import { resolve } from 'path'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import Sitemap from "vite-plugin-sitemap";
+import { resolve } from "path";
 
-const dir = './src/pages'
-
+const routes = ["404", "about", "contact", "projects", "skills"];
+const dynamicRoutes = routes.map((name) => `/${name}`);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  base: '/',
+  plugins: [
+    react(),
+    Sitemap({ dynamicRoutes, hostname: "https://oliver.nederal.com" }),
+  ],
+  base: "/",
 
   build: {
     rollupOptions: {
@@ -18,4 +22,4 @@ export default defineConfig({
       },
     },
   },
-})
+});

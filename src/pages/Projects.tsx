@@ -5,6 +5,7 @@ import {
   SiReact,
   SiFlask,
   SiPython,
+  SiElectron,
 } from "react-icons/si";
 import { RxDividerVertical, RxExternalLink } from "react-icons/rx";
 
@@ -63,7 +64,7 @@ const Projects = () => {
             languages=<a className="flex flex-row items-center self-center w-full justify-center">
               <SiReact /> React
               <RxDividerVertical />
-              <SiTypescript /> Typescript
+              <SiElectron /> Electron
               <RxDividerVertical />
               <SiTailwindcss /> TailwindCSS
             </a>

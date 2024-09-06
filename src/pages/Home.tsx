@@ -18,7 +18,7 @@ const Home = () => {
             <img
               className="self-center rounded-full h-[11vh] md:h-[80px] mr-2"
               src={MePicture}
-              alt=""
+              alt="a picture of me"
             ></img>
             <span className="text-5xl md:text-8xl text-black font-semibold justify-self-start">
               Oliver Nederal

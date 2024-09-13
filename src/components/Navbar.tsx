@@ -38,7 +38,7 @@ const Navbar = () => {
                   placement="bottom"
                   size="lg"
                 >
-                  <IconButton>
+                  <IconButton href="https://github.com/pilot-64">
                     {" "}
                     <FaGithub />{" "}
                   </IconButton>

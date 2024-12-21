@@ -15,9 +15,7 @@ export const metadata: Metadata = {
     follow: true,
     nocache: true,
   },
-  openGraph: {
-    images: 'https://oliver.nederal.com/opengraph-image.jpg',
-  },
+  metadataBase: new URL('https://oliver.nederal.com'),
   manifest: '/manifest.json',
 };
 

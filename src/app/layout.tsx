@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import ThemeProvider from "../components/themeprovider";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 export const metadata: Metadata = {
   title: "Oliver Nederal",

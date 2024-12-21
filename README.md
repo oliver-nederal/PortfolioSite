@@ -2,7 +2,7 @@
 My personal portfolio site which can be visited at https://oliver.nederal.com, containing information about me, my GitHub projects, and my technical skills. The website is responsive, quick, and modern.
 
 > [!CAUTION]
-> Text yet to be updated after migration to NextJS!
+> WARNING: Disregard text and instructions, yet to be updated after migration to NextJS!
 
 #### Features ####
 

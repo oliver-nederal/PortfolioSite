@@ -13,6 +13,7 @@ import {
   RiGithubLine,
   RiSunLine,
   RiMoonLine,
+  RiComputerLine,
 } from "react-icons/ri";
 
 type ThemeOption = 'system' | 'light' | 'dark';
@@ -193,18 +194,21 @@ export default function Navbar() {
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.95 }}
-                      className="absolute right-0 top-full mt-2 w-32 bg-white dark:bg-gray-800 rounded-xl overflow-hidden text-black dark:text-white shadow-lg border border-gray-200 dark:border-gray-700"
+                      className="absolute right-0 top-full mt-2 w-[150px] bg-white dark:bg-gray-800 rounded-xl overflow-hidden text-black dark:text-white shadow-lg border border-gray-200 dark:border-gray-700"
                     >
                       {themeOptions.map((themeOption) => (
                         <button
                           key={themeOption}
                           onClick={() => handleThemeChange(themeOption)}
-                          className={`w-full flex justify-between items-center px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 
+                          className={`w-full flex justify-between space-x-2 items-center px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 
                             ${theme === themeOption 
                               ? 'bg-gray-100 dark:bg-gray-700' 
                               : ''}`}
                         >
-                          <span className="capitalize">{themeOption}</span>
+                          <span className="flex flex-row space-x-2 items-center">
+                            { themeOption === 'system' ? <RiComputerLine /> : (themeOption === 'light' ? <RiSunLine/> : <RiMoonLine/>) }
+                            <span className="capitalize">{themeOption}</span>
+                          </span>
                           {theme === themeOption && (
                             <FiCheck className="w-4 h-4 text-green-500" />
                           )}

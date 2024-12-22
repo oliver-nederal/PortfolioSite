@@ -26,7 +26,7 @@ export default function NotFoundPage() {
   };
 
   return (
-    <div className="py-[20px] w-full h-full">
+    <div className="pb-[40px] pt-[100px] px-[20px] w-full h-screen">
       <div className="rounded-xl bg-gray-950 h-full w-full flex flex-col items-center justify-center relative overflow-hidden">
         {/* Stars */}
         {stars.map((star, i) => (

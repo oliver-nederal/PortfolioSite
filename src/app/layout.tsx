@@ -4,6 +4,10 @@ import "./globals.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
+import getConfig from 'next/config';
+const { publicRuntimeConfig } = getConfig();
+const baseUrl = publicRuntimeConfig.baseUrl;
+
 export const metadata: Metadata = {
   title: "Oliver Nederal",
   description:
@@ -15,7 +19,7 @@ export const metadata: Metadata = {
     follow: true,
     nocache: true,
   },
-  metadataBase: new URL('https://oliver.nederal.com'),
+  metadataBase: new URL(baseUrl),
   manifest: '/manifest.json',
 };
 

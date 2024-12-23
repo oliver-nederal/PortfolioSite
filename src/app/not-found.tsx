@@ -28,7 +28,6 @@ export default function NotFoundPage() {
   return (
     <div className="pb-[40px] pt-[100px] px-[20px] w-full h-screen">
       <div className="rounded-xl bg-gray-950 h-full w-full flex flex-col items-center justify-center relative overflow-hidden">
-        {/* Stars */}
         {stars.map((star, i) => (
           <div
             key={i}
@@ -42,7 +41,6 @@ export default function NotFoundPage() {
             }}
           />
         ))}
-        {/* Main content */}
         <div className="text-center z-10">
           <div className="p-8 rounded-lg max-w-md mx-auto">
             <h2 className="text-6xl sm:text-8xl font-black text-yellow-400 mb-6">

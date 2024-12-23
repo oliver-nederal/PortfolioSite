@@ -1,31 +1,37 @@
-export default function sitemap() {
+import type { MetadataRoute } from 'next';
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
+const baseUrl = publicRuntimeConfig.baseUrl;
+
+export default function sitemap(): MetadataRoute.Sitemap {
     return [
     {
-        url: 'https://oliver.nederal.com/',
+        url: baseUrl,
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 1, 
     },
     {
-        url: 'https://oliver.nederal.com/projects',
+        url: `${baseUrl}/projects`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.5,
     },
     {
-        url: 'https://oliver.nederal.com/skills',
+        url: `${baseUrl}/skills`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.5,
     },
     {
-        url: 'https://oliver.nederal.com/about',
+        url: `${baseUrl}/about`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.5,
         },
     {
-        url: 'https://oliver.nederal.com/contact',
+        url: `${baseUrl}/contact`,
         lastModified: new Date(),
         changeFrequency: 'yearly',
         priority: 0.5,

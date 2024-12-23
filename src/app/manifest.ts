@@ -1,4 +1,6 @@
-export default function manifest() {
+import type { MetadataRoute } from 'next'
+
+export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Oliver Nederal',
     short_name: 'Oliver Nederal',

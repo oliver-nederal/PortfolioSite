@@ -6,9 +6,9 @@ import { RxDividerVertical } from "react-icons/rx";
 import { MdArrowOutward } from "react-icons/md";
 
 import parkviewlogo from "./images/parkviewproject/logo.png"
-import parkviewscreenshot1 from "./images/parkviewproject/screenshot1.png"
-import parkviewicon from "./images/parkviewproject/icon.png"
+import parkviewdeviceframes from "./images/parkviewproject/deviceframes.png"
 import parkviewscreenshot2 from "./images/parkviewproject/screenshot2.png"
+import parkviewicon from "./images/parkviewproject/icon.png";
 
 interface Project {
   id: number; name: string; description: string; githublink?: string | null; deploylink?: string | null; languages: React.ReactNode; additional?: React.ReactNode | null;
@@ -23,11 +23,11 @@ const projects: Project[] = [
     deploylink: null,
     languages: (<p className="flex flex-row items-center justify-center text-lg"><SiNextdotjs /> NextJS <RxDividerVertical /> <SiTailwindcss /> TailwindCSS <RxDividerVertical /> <SiTypescript/> Typescript</p>),
     additional: (
-      <div className="grid grid-cols-6 grid-rows-6 row-span-3 col-span-3 gap-3 pr-8">
+      <div className="grid grid-cols-6 grid-rows-4 row-span-3 col-span-3 gap-3 pr-8">
         <Image
-          width={ 800 }
-          height={ 600 }
-          src={parkviewscreenshot1} 
+          width={ 1920 }
+          height={ 1080 }
+          src={parkviewdeviceframes} 
           className="rounded-lg border w-full h-full object-contain col-span-6 row-span-3 bg-[#174940]"
           alt={`${name} project preview`}
         />
@@ -43,20 +43,6 @@ const projects: Project[] = [
           height={ 240 }
           src={parkviewicon}
           className="rounded-lg border w-full h-full object-contain bg-[#174940]"
-          alt={`${name} project preview`}
-        />
-        <Image
-          width={ 320 }
-          height={ 240 }
-          src={parkviewscreenshot2}
-          className="rounded-lg border w-full h-full col-span-2 row-span-2 object-contain bg-[#174940]"
-          alt={`${name} project preview`}
-        />
-        <Image
-          width={ 320 }
-          height={ 240 }
-          src={parkviewscreenshot2}
-          className="rounded-lg border w-full h-full col-span-2 row-span-2 object-contain bg-[#174940]"
           alt={`${name} project preview`}
         />
       </div>

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/eslint-plugin-next": "^15.1.7",
     "devicons-react": "^1.5.0-beta.1",
     "framer-motion": "^12.0.0-alpha.2",
     "lucide-react": "^0.460.0",

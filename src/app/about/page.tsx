@@ -1,9 +1,10 @@
 import Image from "next/image";
 
-const ProjectionMappingImage = "/static/about_me/projectionmapping.jpg";
-const HackathonImage = "/static/about_me/hackathon.jpg";
-const TedXImage = "/static/about_me/presentation.jpg";
-const FormnextImage = "/static/about_me/formnext.jpg";
+// Import images properly
+import Bike from "@/app/assets/images/about_me/bike.jpg";
+import EuroscopeATC from "@/app/assets/images/about_me/euroscope.jpg";
+import TedXImage from "@/app/assets/images/about_me/presentation.jpg";
+import AirbusCockpit from "@/app/assets/images/about_me/airbuscockpit.jpg";
 
 export default function About() {
   return (
@@ -14,35 +15,23 @@ export default function About() {
           <div className="space-y-6 order-1 dark:text-white">
             <h1 className="text-4xl font-bold">A whole page just about me!</h1>
             <p className="text-base sm:text-lg leading-relaxed">
-              I was born and raised in Stockholm, a place which I have always
-              called home. In 2019 I relocated to the Czech Republic to pursue
-              secondary education, where I am set to graduate in June of 2025.
+             I am currently a first-year student studying Computer Science and Engineering at TUDelft.
             </p>
 
             <p className="text-base sm:text-lg leading-relaxed">
-              The first time I definitively decided to pursue further education
-              and a career in computer science was during a 2018 lecture on
-              &quot;Life 3.0: Being Human in the Age of Artificial
-              Intelligence&quot; by the legendary MIT professor Max Tegmark. It
-              was the first of many experiences that revealed to me the beauty
-              of computational logic, programming, and its ethical and
-              beneficial usage.
+              🚧 Rewrite in progress 🚧
             </p>
 
             <p className="text-base sm:text-lg leading-relaxed">
-              Following this, I furthered my knowledge by working on many
-              different personal projects as well as participating courses such
-              as the MIT Beaverworks RACECAR Prerequisite course.
+              🚧 Rewrite in progress 🚧
             </p>
 
             <div className="border-l-4 border-blue-500 pl-4 py-2 mt-6">
               <h2 className="text-lg sm:text-xl font-semibold mb-2">
-                For the nerds:
+                🚧 Rewrite in progress 🚧
               </h2>
               <p className="text-base sm:text-lg">
-                Most of my projects are full-stack web applications, but I also
-                dipped my toes in machine learning, data science, and algorithm
-                projects.
+                🚧 Rewrite in progress 🚧
               </p>
               <a
                 href="/projects"
@@ -53,48 +42,49 @@ export default function About() {
             </div>
           </div>
 
-          {/* Image Gallery */}
-          <div className="grid grid-cols-2 gap-4 w-full h-full order-2">
-            {[
-              {
-                src: ProjectionMappingImage,
-                desc: "Projection Mapping Project",
-                alt: "Projection mapping demonstration",
-              },
-              {
-                src: HackathonImage,
-                desc: "5th place in Sunny Canadian Hackathon",
-                alt: "Hackathon participation",
-              },
-              {
-                src: TedXImage,
-                desc: "TEDxYouth Talk on LLMs",
-                alt: "Presenting at TEDxYouth",
-              },
-              {
-                src: FormnextImage,
-                desc: "FormNext VIP Invitation",
-                alt: "FormNext VIP event",
-              },
-            ].map(({ src, desc, alt }, index) => (
-              <div
-                key={index}
-                className="relative w-full aspect-square overflow-hidden rounded-lg shadow-lg group"
-              >
-                <Image
-                  loading="lazy"
-                  src={src}
-                  alt={alt}
-                  fill
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-1.5 sm:p-2 text-xs sm:text-sm text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {desc}
+            {/* Image Gallery */}
+            <div className="hidden grid-cols-2 gap-4 w-full h-full order-2">
+              {[
+                {
+                  src: EuroscopeATC,
+                  desc: "S1 Controller on the VATSIM Network",
+                  alt: "Euroscope ATC software for VATSIM",
+                },
+                {
+                  src: Bike,
+                  desc: "Me on a bike in the Netherlands :)",
+                  alt: "Me on a bike in the Netherlands :)",
+                },
+                {
+                  src: TedXImage,
+                  desc: "TEDxYouth Talk on LLMs",
+                  alt: "Presenting at TEDxYouth",
+                },
+                {
+                  src: AirbusCockpit,
+                  desc: "Passion for Aviation",
+                  alt: "Airbus Cockpit event",
+                },
+              ].map(({ src, desc, alt }, index) => (
+                <div
+                  key={index}
+                  className="relative w-full aspect-square overflow-hidden rounded-lg shadow-lg group"
+                >
+                  <Image
+                    loading="lazy"
+                    src={src}
+                    alt={alt}
+                    fill
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-1.5 sm:p-2 text-xs sm:text-sm text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {desc}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div> 
+
         </div>
       </div>
     </div>

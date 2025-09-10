@@ -26,9 +26,9 @@ interface NavigationItem {
 const navigationItems: NavigationItem[] = [
   { title: "Home", url: "/" },
   { title: "About", url: "/about" },
-  { title: "Skills", url: "/skills" },
   { title: "Projects", url: "/projects" },
   { title: "Contact", url: "/contact" },
+  { title: "| Photography", url: "/photography" },
 ];
 
 export default function Navbar() {
@@ -106,24 +106,25 @@ export default function Navbar() {
     <>
       <div className="flex justify-center">
         <div
-          className={`fixed flex justify-center w-full h-[100px] z-20 transition-all duration-300 ${
+          className={`fixed flex justify-center w-full bg-red-300 z-50 transition-all duration-300 ${
             isScrolled ? "backdrop-blur-sm" : ""
           }`}
         >
           <div
-            className={`fixed top-[20px] w-[calc(100%-40px)] h-[60px] flex justify-between items-center p-4
+            className={`fixed w-full h-[80px] flex justify-between items-center px-6
             ${
               isScrolled
-                ? "bg-[#efeff0] dark:bg-[#202120] shadow-lg"
-                : "bg-[#efeff0] dark:bg-[#202120]"
+                ? "bg-white dark:bg-[#202120]/80 shadow-lg"
+                : "bg-white dark:bg-[#202120]/60"
             }
-            border border-gray-200 dark:border-gray-800 rounded-2xl transition-all duration-300`}
+            backdrop-filter backdrop-blur-md border-b border-black dark:border-gray-400/50 transition-all duration-300`}
           >
             <motion.div
               className="flex items-center space-x-4"
               whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              <Link href="/" className="flex items-center space-x-2">
+              <Link href="/" className="flex items-center space-x-2 transition-transform duration-200 hover:scale-105">
                 <Image
                   src="/static/logo.png"
                   alt="Logo"
@@ -134,40 +135,47 @@ export default function Navbar() {
               </Link>
             </motion.div>
 
-            <nav className="hidden md:flex items-center space-x-1">
+            <nav className="hidden md:flex items-center space-x-2">
               {navigationItems.map(({ title, url }) => {
                 const isActive = pathname === url;
                 return (
                   <motion.div
                     key={title}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
                   >
                     <Link
                       href={url}
-                      className={`flex items-center px-3 py-2 rounded-xl font-medium transition-all duration-200
+                      className={`relative flex items-center px-4 py-2 rounded-xl transition-all duration-200
                         ${
                           isActive
-                            ? "bg-gray-100 dark:bg-gray-800 text-gray-900 hover:font-bold dark:text-white"
-                            : "text-gray-600 dark:text-gray-300 hover:bg-gray-50 hover:font-bold dark:hover:bg-gray-800/50"
+                            ? "text-gray-900 dark:text-white"
+                            : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
                         }`}
                     >
                       {title}
+                      {isActive && (
+                        <motion.div
+                          layoutId="navbar-active"
+                          className="absolute inset-0 bg-gray-100 dark:bg-gray-800 rounded-xl -z-10"
+                          transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                        />
+                      )}
                     </Link>
                   </motion.div>
                 );
               })}
             </nav>
 
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3">
               <motion.a
                 aria-label="GitHub Profile"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://github.com/pilot-64"
+                href="https://github.com/oliver-nederal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                className="p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800/70 transition-colors"
               >
                 <RiGithubLine className="w-5 h-5" />
               </motion.a>
@@ -178,23 +186,24 @@ export default function Navbar() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setIsThemeDropdownOpen(!isThemeDropdownOpen)}
-                  className="p-2 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  className="p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800/70 transition-colors"
                   aria-label="Theme Selection"
                 >
                   {mounted && (
-                    theme === 'dark' ? <RiMoonLine/> : 
-                    theme === 'light' ? <RiSunLine/> : 
-                    resolvedTheme === 'light' ? <RiSunLine/> : <RiMoonLine/>
+                    theme === 'dark' ? <RiMoonLine className="w-5 h-5"/> : 
+                    theme === 'light' ? <RiSunLine className="w-5 h-5"/> : 
+                    resolvedTheme === 'light' ? <RiSunLine className="w-5 h-5"/> : <RiMoonLine className="w-5 h-5"/>
                   )}
                 </motion.button>
 
                 <AnimatePresence>
                   {isThemeDropdownOpen && (
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      className="absolute right-0 top-full mt-2 w-[150px] bg-white dark:bg-gray-800 rounded-xl overflow-hidden text-black dark:text-white shadow-lg border border-gray-200 dark:border-gray-700"
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                      className="z-50 absolute right-0 top-full mt-2 w-[150px] bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-xl overflow-hidden text-black dark:text-white shadow-lg border border-gray-200/50 dark:border-gray-700/50"
                     >
                       {themeOptions.map((themeOption) => (
                         <button

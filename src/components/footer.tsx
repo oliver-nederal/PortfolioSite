@@ -9,7 +9,7 @@ const SvgStarComponent = (props: SVGProps<SVGSVGElement>) => (
 
 export default function Footer() { 
     return (
-        <footer className="fixed bottom-0 w-full h-[20px] bg-gray-100 dark:bg-[#343d3f] dark:text-white text-center text-sm">
+        <footer className="fixed bottom-0 w-full h-[20px] bg-gray-100 dark:bg-[#343d3f] dark:text-white text-center text-sm z-50">
             <p className="text-xs sm:text-sm"> <SvgStarComponent className="inline h-[15px] dark:fill-white"/> Made by me, <Link className="text-blue-600 dark:text-blue-300 hover:underline" href="https://github.com/Pilot-64/PortfolioSite">fully open-source for you on GitHub</Link> <SvgStarComponent className="inline h-[15px] dark:fill-white"/></p>
         </footer>
     )

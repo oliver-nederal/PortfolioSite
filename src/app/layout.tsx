@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ThemeProvider from "../components/themeprovider";
+
 import "./globals.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
@@ -43,7 +44,7 @@ export default function RootLayout({
           <main className="block xs:hidden pt-[80px] px-[20px]">
             <h1>This page can not be displayed properly on this device</h1>
           </main>
-          <Footer/>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

@@ -1,144 +1,275 @@
 "use client";
-import React, { useState, useEffect, useRef, useCallback } from "react";
-import Image from "next/image";
-import { SiTypescript, SiTailwindcss, SiReact, SiFlask, SiPython, SiElectron, SiNextdotjs} from "react-icons/si";
-import { RxDividerVertical } from "react-icons/rx";
-import { MdArrowOutward } from "react-icons/md";
+import React from "react";
+import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
+import { SiGithub } from "react-icons/si";
+import { IoArrowForward } from "react-icons/io5";
+import { motion } from 'framer-motion';
 
-import parkviewlogo from "./images/parkviewproject/logo.png"
-import parkviewdeviceframes from "./images/parkviewproject/deviceframes.png"
-import parkviewscreenshot2 from "./images/parkviewproject/screenshot2.png"
-import parkviewicon from "./images/parkviewproject/icon.png";
+// Import project images
+import ParkViewDeviceFrames from "@/app/projects/images/parkviewproject/deviceframes.png";
+import TasklyApp from "@/app/projects/images/taskly/tasklyapp.png";
+import ResearchPaperThumbnail from "@/app/projects/images/researchpaper/thumb.png";
+import StudyBudsOpenGraph from "@/app/projects/images/studybuds/opengraph.jpg";
 
 interface Project {
-  id: number; name: string; description: string; githublink?: string | null; deploylink?: string | null; languages: React.ReactNode; additional?: React.ReactNode | null;
+  id: number;
+  name: string;
+  description: string;
+  link?: string | null;
+  githubLink?: string | null;
+  languages: string[];
+  images?: {
+    main?: string | StaticImageData;
+    logo?: string | StaticImageData;
+    icon?: string | StaticImageData;
+  } | null;
+  backgroundColor?: string;
 }
 
 const projects: Project[] = [
   {
     id: 0,
-    name: "Pozeska Site",
-    description: "Went throught the process of ideation, design, and development of a website. Did research on the area and the target audience to create a website that would be appealing to them. After conducting research, I worked on designing a website as well as brand identity that would be visually appealing, easy to navigate, while also integrating advanced features. I chose to create this solution in NextJS, with both SEO as well as performance in mind.",
-    githublink: "FakeNewsDetector",
-    deploylink: null,
-    languages: (<p className="flex flex-row items-center justify-center text-lg"><SiNextdotjs /> NextJS <RxDividerVertical /> <SiTailwindcss /> TailwindCSS <RxDividerVertical /> <SiTypescript/> Typescript</p>),
-    additional: (
-      <div className="grid grid-cols-6 grid-rows-4 row-span-3 col-span-3 gap-3 pr-8">
-        <Image
-          width={ 1920 }
-          height={ 1080 }
-          src={parkviewdeviceframes} 
-          className="rounded-lg border w-full h-full object-contain col-span-6 row-span-3 bg-[#174940]"
-          alt={`${name} project preview`}
-        />
-        <Image
-          width={ 320 }
-          height={ 240 }
-          src={parkviewlogo}
-          className="rounded-lg border w-full h-full object-contain col-span-5 bg-[#174940]"
-          alt={`${name} project preview`}
-        />
-        <Image
-          width={ 320 }
-          height={ 240 }
-          src={parkviewicon}
-          className="rounded-lg border w-full h-full object-contain bg-[#174940]"
-          alt={`${name} project preview`}
-        />
-      </div>
-    )
+    name: "Real Estate Site",
+    description:
+      "A website developed through research-driven design and development. Focuses on user experience, SEO optimization, and performance using NextJS.",
+    link: "https://parkview.nederal.com",
+    languages: ["NextJS", "TailwindCSS", "TypeScript"],
+    images: {
+      main: ParkViewDeviceFrames,
+    },
+    backgroundColor: "#174940"
   },
   {
     id: 1,
-    name: "Fake News Detector",
-    description: "A flask API which returns the likelihood of a news article being misleading based on the article title.",
-    githublink: "FakeNewsDetector",
-    deploylink: null,
-    languages: (<p className="flex flex-row items-center justify-center text-lg"><SiPython /> Python <RxDividerVertical /> <SiFlask /> Flask</p>)
+    name: "Research Paper",
+    description:
+      "A research paper on the topic 'Optimizing Pathfinding in Urban Environments: A Dynamic Algorithm Approach for Block-Based and Organic City Layouts' ",
+    languages: ["English?", "LaTeX"],
+    images: {
+      main: ResearchPaperThumbnail,
+    }
   },
   {
     id: 2,
     name: "Taskly",
-    description: "An open-source desktop electron to-do app which allows users to create, edit, and manage their tasks.",
-    githublink: "Taskly",
-    deploylink: "example.com",
-    languages: (<p className="flex flex-row items-center justify-center text-lg"><SiReact /> React <RxDividerVertical /> <SiElectron /> Electron <RxDividerVertical /> <SiTailwindcss /> TailwindCSS</p>)
+    description:
+      "An open-source desktop Electron application for task management allowing users to create, edit, and organize daily tasks and projects.",
+    link: "https://taskly-app.netlify.app",
+    githubLink: "https://github.com/oliver-nederal/taskly",
+    languages: ["React", "Electron", "TailwindCSS"],
+    backgroundColor: "#2d3748",
+    images: {
+      main: TasklyApp,
+    }
   },
   {
     id: 3,
+    name: "Fake News Detector",
+    description:
+      "A Flask API that analyzes news article titles to determine the likelihood of them being misleading or false information.",
+    githubLink: "https://github.com/oliver-nederal/fakenewsdetector",
+    languages: ["Python", "Flask"],
+    backgroundColor: "#2c3e50",
+    images: {
+      main: "https://placehold.co/600x338/2c3e50/white?text=Fake+News+AI",
+    }
+  },
+  {
+    id: 4,
     name: "StudyBuds",
-    description: "An open-source website which connects students with subject-based communities for collaborative learning.",
-    githublink: "StudyBuds",
-    deploylink: "example.com",
-    languages: (<p className="flex flex-row items-center justify-center text-lg"><SiReact /> React <RxDividerVertical /> <SiTypescript /> TypeScript <RxDividerVertical /> <SiTailwindcss /> TailwindCSS</p>)
-  }
+    description:
+      "A collaborative platform connecting students with subject-based communities for learning and knowledge sharing.",
+    link: "null",
+    githubLink: "https://github.com/oliver-nederal/studybuds-website",
+    languages: ["React", "TypeScript", "TailwindCSS"],
+    backgroundColor: "#1a365d",
+    images: {
+      main: StudyBudsOpenGraph,
+    }
+  },
 ];
 
-const ProjectCard: React.FC<Project> = ({ name, githublink, languages, description, additional }) => (
-  <div className="group bg-white dark:bg-[#1d1d1c] dark:text-white drop-shadow-xl border-b-2 border-x-2 h-screen pt-[100px] pb-[40px] px-[20px] w-full snap-start grid grid-cols-5 grid-rows-3">
-    {additional}
-    <div className="mx-4 flex flex-col space-y-3 row-span-2 col-span-2">
-      {languages}
-      <h1 className="font-bold text-2xl">{name}</h1>
-      <h1 className="pb-4">{description}</h1>
-    </div>
-    <div className="grid grid-cols-3 col-span-2 row-span-1">
-      <a className="flex flex-row col-span-2 gap-2 bg-blue-400 p-4 rounded-lg" href={githublink ? `https://github.com/Pilot-64/${githublink}` : "#"} target="_blank">
-        Visit <MdArrowOutward />
-      </a>
-      <a className="bg-blue-400 p-4 rounded-lg" href={githublink ? `https://github.com/Pilot-64/${githublink}` : "#"} target="_blank">GitHub</a>
-    </div>
-  </div>
-);
-
-interface ScrollDotsProps { projects: Project[]; currentIndex: number; handleDotClick: (index: number) => void; }
-const ScrollDots: React.FC<ScrollDotsProps> = ({ projects, currentIndex, handleDotClick }) => (
-  <div className="fixed flex flex-col gap-2 justify-center items-center right-2 top-[50%] -translate-y-1/2 p-2 bg-gray-300 dark:bg-gray-700 z-30 rounded-2xl">
-    {projects.map((_, index) => (
-      <button key={index} onClick={() => handleDotClick(index)} className={`w-3 rounded-full transition-all duration-300 ${index === currentIndex ? "bg-white w-3 h-24" : "bg-white/50 hover:bg-white/70 h-3"}`} />
-    ))}
-  </div>
-);
-
-const Projects: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = useCallback(() => {
-    if (containerRef.current) {
-      const children = Array.from(containerRef.current.children) as HTMLDivElement[];
-      let closestIndex = 0, minDistance = Number.MAX_VALUE;
-      children.forEach((child, index) => {
-        const distance = Math.abs(child.getBoundingClientRect().top);
-        if (distance < minDistance) { minDistance = distance; closestIndex = index; }
-      });
-      setCurrentIndex(closestIndex);
-    }
-  }, []);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    container.addEventListener("scroll", handleScroll, { passive: true });
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
-
-  const handleDotClick = (index: number) => {
-    containerRef.current?.children[index]?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
+const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
+  const { name, description, link, githubLink, languages, images, backgroundColor } = project;
+  
   return (
-    <>
-      <div className="flex flex-col items-center w-full">
-        <div ref={containerRef} className="h-screen w-full snap-y snap-mandatory overflow-y-auto no-scrollbar grid grid-cols-1">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} {...project} />
-          ))}
-        </div>
-      </div>
-      <ScrollDots projects={projects} currentIndex={currentIndex} handleDotClick={handleDotClick} />
-    </>
+    <motion.div 
+      className="group flex flex-col h-full relative z-10"
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ 
+        duration: 0.6, 
+        delay: 0.1 * index, 
+        ease: [0.22, 1, 0.36, 1] 
+      }}
+      whileHover={{ y: -6, zIndex: 20 }}
+    >
+      <motion.div 
+        className="rounded-xl overflow-hidden shadow-sm hover:shadow-md flex flex-col h-full relative border border-neutral-200 dark:border-neutral-700/50"
+        whileHover={{ boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
+        transition={{ duration: 0.3 }}
+      >
+        {/* Full card background image */}
+        {images?.main && (
+          <div className="w-full h-full absolute inset-0 z-0">
+            <motion.div
+              className="absolute inset-0 z-0"
+              style={{ backgroundColor: backgroundColor || "#1f2937" }}
+              initial={{ opacity: 0.8 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 * index }}
+            ></motion.div>
+            <motion.div
+              className="relative z-0 h-full"
+              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <Image
+                src={images.main}
+                alt={`${name} preview`}
+                fill
+                sizes="(max-width: 640px) 100vw, 50vw"
+                className="object-cover relative z-0"
+                loading="lazy"
+                quality={90}
+              />
+              {/* Overlay gradient for better text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent z-10"></div>
+            </motion.div>
+          </div>
+        )}
+        
+        {/* Project Information - Overlaid on image */}
+        <motion.div 
+          className="p-8 flex flex-col h-full justify-end relative z-20"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.15 * index + 0.2 }}
+        >
+          <div className="mt-auto">
+            <motion.h2 
+              className="text-2xl font-semibold mb-3 text-white drop-shadow-md"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 * index + 0.1 }}
+            >
+              {name}
+            </motion.h2>
+            
+            <motion.p 
+              className="text-neutral-200 leading-relaxed mb-6 max-w-prose drop-shadow-md"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.2 * index + 0.2 }}
+            >
+              {description}
+            </motion.p>
+            
+            {/* Technology Tags */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {languages.map((tech, techIndex) => (
+                <motion.span 
+                  key={techIndex}
+                  className="px-3 py-1 text-sm rounded-full bg-white/20 backdrop-blur-sm text-white"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ 
+                    duration: 0.4, 
+                    delay: 0.2 * index + 0.3 + (0.05 * techIndex) 
+                  }}
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.3)" }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {tech}
+                </motion.span>
+              ))}
+            </div>
+            
+            {/* Action Links */}
+            <motion.div 
+              className="flex flex-wrap gap-6"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 * index + 0.4 }}
+            >
+              {link && (
+                <motion.div
+                  whileHover={{ x: 3 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  <Link 
+                    href={link}
+                    className="inline-flex items-center group/link text-white hover:text-neutral-200 transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="border-b border-white/40 group-hover/link:border-white/60 transition-colors">View Live</span>
+                    <motion.div
+                      className="ml-2"
+                      animate={{ x: 0 }}
+                      whileHover={{ x: 3 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <IoArrowForward />
+                    </motion.div>
+                  </Link>
+                </motion.div>
+              )}
+              
+              {githubLink && (
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.97 }}
+                >
+                  <Link 
+                    href={githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center group/link text-white hover:text-neutral-200 transition-colors"
+                  >
+                    <SiGithub className="mr-2" />
+                    <span className="border-b border-white/40 group-hover/link:border-white/60 transition-colors">Source Code</span>
+                  </Link>
+                </motion.div>
+              )}
+            </motion.div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
-export default Projects;
+const ProjectsPage: React.FC = () => {
+  return (
+    <div className="min-h-screen pt-[90px] pb-[60px] px-6 text-neutral-900 dark:text-white relative overflow-hidden">
+      <motion.div 
+        className="w-full relative z-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 md:gap-8 relative z-10">
+          {projects.map((project, index) => (
+            <motion.div 
+              key={project.id} 
+              className="pt-4 h-[500px] sm:h-[550px] md:h-[500px] lg:h-[550px] relative"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: 0.1 * index,
+                ease: "easeOut" 
+              }}
+            >
+              <ProjectCard project={project} index={index} />
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+export default ProjectsPage;

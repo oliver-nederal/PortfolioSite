@@ -15,8 +15,24 @@ export default {
         darktext: "#FFFFFE",
         lighttext: "#000000",
       },
+      cursor: {
+        blackOut: "url('cursors/blackcursor.svg') 24 24, default",
+        whiteOut: "url('cursors/whitecursor.svg') 24 24, default",
+        blackGithub: "url('cursors/blackgithub.svg') 24 24, default",
+        whiteGithub: "url('cursors/whitegithub.svg') 24 24, default",
+      },
+      keyframes: {
+        infinitescroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        infinitescroll: 'infinitescroll 20s linear infinite',
+      },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
+        sans: ["Geist", "Inter", "sans-serif"],
+        mono: ["Geist Mono", "monospace"],
       },
       screens: {
         'xs': '260px',

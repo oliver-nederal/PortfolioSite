@@ -45,15 +45,29 @@ Click the fork button\
 ### Prerequisites ###
 ```
 NodeJS v20
+Minio Server (for the Photography page)
 ```
 ### Installing and Running ###
 1. Install all of the necessary node modules:
 ```npm install``` or ```npm i```
 
-2. To run the website in development mode run:
+2. Create a `.env.local` file by copying the example file:
+```cp .env.local.example .env.local```
+
+3. Update the Minio configuration in `.env.local` with your actual Minio server details:
+```
+MINIO_ENDPOINT=your-minio-server
+MINIO_PORT=9000
+MINIO_USE_SSL=false  # Set to true if you're using SSL
+MINIO_ACCESS_KEY=your-access-key
+MINIO_SECRET_KEY=your-secret-key
+MINIO_BUCKET_NAME=photography  # The bucket containing your photos
+```
+
+4. To run the website in development mode run:
 ```npm run dev```
 
-You will now be able to view the webpage at http://localhost:5173 or your IP:5173
+You will now be able to view the webpage at http://localhost:3000 or your IP:3000
 
 ## Usage / Customization ##
 

@@ -20,7 +20,7 @@ interface ImageData {
   width: number;
   height: number;
   tags?: string[];
-  metadata?: Record<string, any>;
+  metadata?: Record<string, string>;
 }
 
 export default function CategoryPage() {

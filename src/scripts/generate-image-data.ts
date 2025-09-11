@@ -89,12 +89,6 @@ async function generateImageData() {
       };
     });
     
-    // Create output data structure
-    const outputData = {
-      categories: categoryData,
-      images: imagesByCategory
-    };
-    
     // Create the data directory if it doesn't exist
     const dataDir = path.join(process.cwd(), 'src/data');
     if (!fs.existsSync(dataDir)) {

@@ -121,7 +121,7 @@ const ContactPage = () => {
               Got Ideas?
             </h1>
             <h1 className="text-5xl sm:text-6xl font-bold text-neutral-800 dark:text-neutral-100">
-              Let's <span className={`text-${highlightColor}-500`}>Build</span> Something.
+              Let&apos;s <span className={`text-${highlightColor}-500`}>Build</span> Something.
             </h1>
           </motion.div>
 

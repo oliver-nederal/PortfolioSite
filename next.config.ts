@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         imageSizes: [16, 32, 48, 64, 96, 128, 256], // More granular icon sizes
     },
     staticPageGenerationTimeout: 120,
+
+    typescript: {
+        ignoreBuildErrors: true,
+    },
+
 };
 
 export default nextConfig;

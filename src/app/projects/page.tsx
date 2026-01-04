@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { SiGithub } from "react-icons/si";
 import { IoArrowForward } from "react-icons/io5";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 // Import project images
 import ParkViewDeviceFrames from "@/app/projects/images/parkviewproject/deviceframes.png";
@@ -36,7 +36,7 @@ const projects: Project[] = [
     link: "https://parkview.nederal.com",
     languages: ["NextJS", "TailwindCSS", "TypeScript"],
     images: {
-      main: ParkViewDeviceFrames,
+      main: ParkViewDeviceFrames
     },
     backgroundColor: "#174940"
   },
@@ -45,67 +45,54 @@ const projects: Project[] = [
     name: "Research Paper",
     description:
       "A research paper on the topic 'Optimizing Pathfinding in Urban Environments: A Dynamic Algorithm Approach for Block-Based and Organic City Layouts' ",
-    languages: ["English?", "LaTeX"],
+    link: "https://arxiv.org/abs/2309.14063",
+    languages: ["Python", "LaTeX"],
     images: {
-      main: ResearchPaperThumbnail,
+      main: ResearchPaperThumbnail
     }
   },
   {
     id: 2,
     name: "Taskly",
     description:
-      "An open-source desktop Electron application for task management allowing users to create, edit, and organize daily tasks and projects.",
-    link: "https://taskly-app.netlify.app",
-    githubLink: "https://github.com/oliver-nederal/taskly",
-    languages: ["React", "Electron", "TailwindCSS"],
+      "An open-source desktop Tauri application for task management allowing users to create, edit, and organize daily tasks and projects.",
+    link: "https://taskist.app",
+    githubLink: "https://github.com/oliver-nederal/taskist-desktop",
+    languages: ["React", "Tauri", "TailwindCSS"],
     backgroundColor: "#2d3748",
     images: {
-      main: TasklyApp,
-    }
-  },
-  {
-    id: 3,
-    name: "Fake News Detector",
-    description:
-      "A Flask API that analyzes news article titles to determine the likelihood of them being misleading or false information.",
-    githubLink: "https://github.com/oliver-nederal/fakenewsdetector",
-    languages: ["Python", "Flask"],
-    backgroundColor: "#2c3e50",
-    images: {
-      main: "https://placehold.co/600x338/2c3e50/white?text=Fake+News+AI",
-    }
-  },
-  {
-    id: 4,
-    name: "StudyBuds",
-    description:
-      "A collaborative platform connecting students with subject-based communities for learning and knowledge sharing.",
-    link: "null",
-    githubLink: "https://github.com/oliver-nederal/studybuds-website",
-    languages: ["React", "TypeScript", "TailwindCSS"],
-    backgroundColor: "#1a365d",
-    images: {
-      main: StudyBudsOpenGraph,
+      main: TasklyApp
     }
   },
 ];
 
-const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, index }) => {
-  const { name, description, link, githubLink, languages, images, backgroundColor } = project;
-  
+const ProjectCard: React.FC<{ project: Project; index: number }> = ({
+  project,
+  index
+}) => {
+  const {
+    name,
+    description,
+    link,
+    githubLink,
+    languages,
+    images,
+    backgroundColor
+  } = project;
+
   return (
-    <motion.div 
+    <motion.div
       className="group flex flex-col h-full relative z-10"
       initial={{ opacity: 0, y: 30, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ 
-        duration: 0.6, 
-        delay: 0.1 * index, 
-        ease: [0.22, 1, 0.36, 1] 
+      transition={{
+        duration: 0.6,
+        delay: 0.1 * index,
+        ease: [0.22, 1, 0.36, 1]
       }}
       whileHover={{ y: -6, zIndex: 20 }}
     >
-      <motion.div 
+      <motion.div
         className="rounded-xl overflow-hidden shadow-sm hover:shadow-md flex flex-col h-full relative border border-neutral-200 dark:border-neutral-700/50"
         whileHover={{ boxShadow: "0 8px 30px rgba(0,0,0,0.12)" }}
         transition={{ duration: 0.3 }}
@@ -139,16 +126,16 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
             </motion.div>
           </div>
         )}
-        
+
         {/* Project Information - Overlaid on image */}
-        <motion.div 
+        <motion.div
           className="p-8 flex flex-col h-full justify-end relative z-20"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.15 * index + 0.2 }}
         >
           <div className="mt-auto">
-            <motion.h2 
+            <motion.h2
               className="text-2xl font-semibold mb-3 text-white drop-shadow-md"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -156,8 +143,8 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
             >
               {name}
             </motion.h2>
-            
-            <motion.p 
+
+            <motion.p
               className="text-neutral-200 leading-relaxed mb-6 max-w-prose drop-shadow-md"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -165,46 +152,48 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
             >
               {description}
             </motion.p>
-            
+
             {/* Technology Tags */}
             <div className="flex flex-wrap gap-2 mb-6">
               {languages.map((tech, techIndex) => (
-                <motion.span 
+                <motion.span
                   key={techIndex}
                   className="px-3 py-1 text-sm rounded-full bg-white/20 backdrop-blur-sm text-white"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ 
-                    duration: 0.4, 
-                    delay: 0.2 * index + 0.3 + (0.05 * techIndex) 
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.2 * index + 0.3 + 0.05 * techIndex
                   }}
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.3)" }}
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgba(255, 255, 255, 0.3)"
+                  }}
                   whileTap={{ scale: 0.95 }}
                 >
                   {tech}
                 </motion.span>
               ))}
             </div>
-            
+
             {/* Action Links */}
-            <motion.div 
+            <motion.div
               className="flex flex-wrap gap-6"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 * index + 0.4 }}
             >
               {link && (
-                <motion.div
-                  whileHover={{ x: 3 }}
-                  whileTap={{ scale: 0.97 }}
-                >
-                  <Link 
+                <motion.div whileHover={{ x: 3 }} whileTap={{ scale: 0.97 }}>
+                  <Link
                     href={link}
                     className="inline-flex items-center group/link text-white hover:text-neutral-200 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="border-b border-white/40 group-hover/link:border-white/60 transition-colors">View Live</span>
+                    <span className="border-b border-white/40 group-hover/link:border-white/60 transition-colors">
+                      Open
+                    </span>
                     <motion.div
                       className="ml-2"
                       animate={{ x: 0 }}
@@ -216,20 +205,22 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
                   </Link>
                 </motion.div>
               )}
-              
+
               {githubLink && (
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
                 >
-                  <Link 
+                  <Link
                     href={githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center group/link text-white hover:text-neutral-200 transition-colors"
                   >
                     <SiGithub className="mr-2" />
-                    <span className="border-b border-white/40 group-hover/link:border-white/60 transition-colors">Source Code</span>
+                    <span className="border-b border-white/40 group-hover/link:border-white/60 transition-colors">
+                      Source Code
+                    </span>
                   </Link>
                 </motion.div>
               )}
@@ -244,7 +235,7 @@ const ProjectCard: React.FC<{ project: Project; index: number }> = ({ project, i
 const ProjectsPage: React.FC = () => {
   return (
     <div className="min-h-screen pt-[90px] pb-[60px] px-6 text-neutral-900 dark:text-white relative overflow-hidden">
-      <motion.div 
+      <motion.div
         className="w-full relative z-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -252,15 +243,15 @@ const ProjectsPage: React.FC = () => {
       >
         <div className="grid sm:grid-cols-2 grid-cols-1 gap-6 md:gap-8 relative z-10">
           {projects.map((project, index) => (
-            <motion.div 
-              key={project.id} 
+            <motion.div
+              key={project.id}
               className="pt-4 h-[500px] sm:h-[550px] md:h-[500px] lg:h-[550px] relative"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.6, 
+              transition={{
+                duration: 0.6,
                 delay: 0.1 * index,
-                ease: "easeOut" 
+                ease: "easeOut"
               }}
             >
               <ProjectCard project={project} index={index} />

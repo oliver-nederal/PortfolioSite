@@ -16,7 +16,7 @@ export default function NotFoundPage() {
     const newStars: Star[] = Array.from({ length: 50 }, () => ({
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: Math.random() * 2 + 1,
+      size: Math.random() * 2 + 1
     }));
     setStars(newStars);
   }, []);
@@ -37,7 +37,7 @@ export default function NotFoundPage() {
               top: `${star.y}%`,
               width: `${star.size}px`,
               height: `${star.size}px`,
-              animation: `twinkle ${Math.random() * 3 + 2}s infinite`,
+              animation: `twinkle ${Math.random() * 3 + 2}s infinite`
             }}
           />
         ))}

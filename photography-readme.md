@@ -50,8 +50,8 @@ This document outlines how to set up and use the photography portfolio feature t
      ```bash
      npm run generate-image-data
      ```
+
    - This will create JSON files in the `src/data` directory containing all image information
-   
 
 4. **Run the Application**:
    - Install dependencies: `npm install`

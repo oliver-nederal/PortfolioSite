@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 
 // Import images properly
@@ -60,49 +61,6 @@ export default function About() {
               </a>
               .
             </p>
-          </div>
-
-          {/* Image Gallery */}
-          <div className="hidden grid-cols-2 gap-4 w-full h-full order-2">
-            {[
-              {
-                src: EuroscopeATC,
-                desc: "S1 Controller on the VATSIM Network",
-                alt: "Euroscope ATC software for VATSIM"
-              },
-              {
-                src: Bike,
-                desc: "Me on a bike in the Netherlands :)",
-                alt: "Me on a bike in the Netherlands :)"
-              },
-              {
-                src: TedXImage,
-                desc: "TEDxYouth Talk on LLMs",
-                alt: "Presenting at TEDxYouth"
-              },
-              {
-                src: AirbusCockpit,
-                desc: "Passion for Aviation",
-                alt: "Airbus Cockpit event"
-              }
-            ].map(({ src, desc, alt }, index) => (
-              <div
-                key={index}
-                className="relative w-full aspect-square overflow-hidden rounded-lg shadow-lg group"
-              >
-                <Image
-                  loading="lazy"
-                  src={src}
-                  alt={alt}
-                  fill
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-1.5 sm:p-2 text-xs sm:text-sm text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {desc}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

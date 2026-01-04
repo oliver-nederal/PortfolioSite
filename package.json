@@ -9,6 +9,7 @@
     "lint": "next lint",
     "generate-image-data": "npx tsx src/scripts/generate-image-data.ts"
   },
+  "engines": { "node": "20.x" },
   "dependencies": {
     "@imagekit/next": "^2.1.2",
     "@next/eslint-plugin-next": "^15.1.7",

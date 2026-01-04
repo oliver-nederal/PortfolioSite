@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { usePathname } from 'next/navigation'
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -13,10 +13,10 @@ import {
   RiGithubLine,
   RiSunLine,
   RiMoonLine,
-  RiComputerLine,
+  RiComputerLine
 } from "react-icons/ri";
 
-type ThemeOption = 'system' | 'light' | 'dark';
+type ThemeOption = "system" | "light" | "dark";
 
 interface NavigationItem {
   title: string;
@@ -28,15 +28,16 @@ const navigationItems: NavigationItem[] = [
   { title: "About", url: "/about" },
   { title: "Projects", url: "/projects" },
   { title: "Contact", url: "/contact" },
-  { title: "| Photography", url: "/photography" },
+  { title: "Photography", url: "/photography" }
 ];
 
 export default function Navbar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [mounted, setMounted] = useState<boolean>(false);
-  const [isThemeDropdownOpen, setIsThemeDropdownOpen] = useState<boolean>(false);
+  const [isThemeDropdownOpen, setIsThemeDropdownOpen] =
+    useState<boolean>(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
   const themeDropdownRef = useRef<HTMLDivElement>(null);
 
@@ -55,7 +56,10 @@ export default function Navbar() {
   // Close menu when clicking outside
   useEffect(() => {
     const closeMenu = (e: MouseEvent) => {
-      if (isMenuOpen && !(e.target as Element).closest(".mobile-menu-container")) {
+      if (
+        isMenuOpen &&
+        !(e.target as Element).closest(".mobile-menu-container")
+      ) {
         setIsMenuOpen(false);
       }
     };
@@ -67,8 +71,8 @@ export default function Navbar() {
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (
-        isThemeDropdownOpen && 
-        themeDropdownRef.current && 
+        isThemeDropdownOpen &&
+        themeDropdownRef.current &&
         !themeDropdownRef.current.contains(e.target as Node)
       ) {
         setIsThemeDropdownOpen(false);
@@ -95,7 +99,7 @@ export default function Navbar() {
     return null;
   }
 
-  const themeOptions: ThemeOption[] = ['system', 'light', 'dark'];
+  const themeOptions: ThemeOption[] = ["system", "light", "dark"];
 
   const handleThemeChange = (selectedTheme: ThemeOption) => {
     setTheme(selectedTheme);
@@ -124,7 +128,10 @@ export default function Navbar() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              <Link href="/" className="flex items-center space-x-2 transition-transform duration-200 hover:scale-105">
+              <Link
+                href="/"
+                className="flex items-center space-x-2 transition-transform duration-200 hover:scale-105"
+              >
                 <Image
                   src="/static/logo.png"
                   alt="Logo"
@@ -158,7 +165,11 @@ export default function Navbar() {
                         <motion.div
                           layoutId="navbar-active"
                           className="absolute inset-0 bg-gray-100 dark:bg-gray-800 rounded-xl -z-10"
-                          transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                          transition={{
+                            type: "spring",
+                            stiffness: 400,
+                            damping: 30
+                          }}
                         />
                       )}
                     </Link>
@@ -168,18 +179,6 @@ export default function Navbar() {
             </nav>
 
             <div className="flex items-center space-x-3">
-              <motion.a
-                aria-label="GitHub Profile"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://github.com/oliver-nederal"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800/70 transition-colors"
-              >
-                <RiGithubLine className="w-5 h-5" />
-              </motion.a>
-
               {/* Theme Dropdown */}
               <div ref={themeDropdownRef} className="relative">
                 <motion.button
@@ -189,11 +188,16 @@ export default function Navbar() {
                   className="p-2.5 rounded-xl text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800/70 transition-colors"
                   aria-label="Theme Selection"
                 >
-                  {mounted && (
-                    theme === 'dark' ? <RiMoonLine className="w-5 h-5"/> : 
-                    theme === 'light' ? <RiSunLine className="w-5 h-5"/> : 
-                    resolvedTheme === 'light' ? <RiSunLine className="w-5 h-5"/> : <RiMoonLine className="w-5 h-5"/>
-                  )}
+                  {mounted &&
+                    (theme === "dark" ? (
+                      <RiMoonLine className="w-5 h-5" />
+                    ) : theme === "light" ? (
+                      <RiSunLine className="w-5 h-5" />
+                    ) : resolvedTheme === "light" ? (
+                      <RiSunLine className="w-5 h-5" />
+                    ) : (
+                      <RiMoonLine className="w-5 h-5" />
+                    ))}
                 </motion.button>
 
                 <AnimatePresence>
@@ -202,7 +206,11 @@ export default function Navbar() {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 25
+                      }}
                       className="z-50 absolute right-0 top-full mt-2 w-[150px] bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-xl overflow-hidden text-black dark:text-white shadow-lg border border-gray-200/50 dark:border-gray-700/50"
                     >
                       {themeOptions.map((themeOption) => (
@@ -210,12 +218,20 @@ export default function Navbar() {
                           key={themeOption}
                           onClick={() => handleThemeChange(themeOption)}
                           className={`w-full flex justify-between space-x-2 items-center px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 
-                            ${theme === themeOption 
-                              ? 'bg-gray-100 dark:bg-gray-700' 
-                              : ''}`}
+                            ${
+                              theme === themeOption
+                                ? "bg-gray-100 dark:bg-gray-700"
+                                : ""
+                            }`}
                         >
                           <span className="flex flex-row space-x-2 items-center">
-                            { themeOption === 'system' ? <RiComputerLine /> : (themeOption === 'light' ? <RiSunLine/> : <RiMoonLine/>) }
+                            {themeOption === "system" ? (
+                              <RiComputerLine />
+                            ) : themeOption === "light" ? (
+                              <RiSunLine />
+                            ) : (
+                              <RiMoonLine />
+                            )}
                             <span className="capitalize">{themeOption}</span>
                           </span>
                           {theme === themeOption && (

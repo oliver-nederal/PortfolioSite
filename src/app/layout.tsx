@@ -5,27 +5,34 @@ import "./globals.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 
-import getConfig from 'next/config';
-const { publicRuntimeConfig } = getConfig();
-const baseUrl = publicRuntimeConfig.baseUrl;
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
   title: "Oliver Nederal",
   description:
     "I am a high school student with interests in computer vision, graph traversal algorithms, and full-stack development. Read more about me and see some of my projects on this website.",
-  keywords: ["student", "developer", "software developer", "software engineer", "fullstack developer", "nederal", "oliver nederal", "oliver"],
-  creator: 'Oliver Nederal',
+  keywords: [
+    "student",
+    "developer",
+    "software developer",
+    "software engineer",
+    "fullstack developer",
+    "nederal",
+    "oliver nederal",
+    "oliver"
+  ],
+  creator: "Oliver Nederal",
   robots: {
     index: true,
     follow: true,
-    nocache: true,
+    nocache: true
   },
   metadataBase: new URL(baseUrl),
-  manifest: '/manifest.json',
+  manifest: "/manifest.json"
 };
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {

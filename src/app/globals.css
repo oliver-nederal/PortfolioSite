@@ -5,45 +5,45 @@
 
 /* Define Geist font */
 @font-face {
-    font-family: 'Geist';
-    src: url('./fonts/GeistVF.woff') format('woff');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Geist";
+  src: url("./fonts/GeistVF.woff") format("woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Geist Mono';
-    src: url('./fonts/GeistMonoVF.woff') format('woff');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Geist Mono";
+  src: url("./fonts/GeistMonoVF.woff") format("woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
-    --foreground: #000000;
-    --background: #ffffff;
+  --foreground: #000000;
+  --background: #ffffff;
 }
 
 [data-theme="dark"] {
-    --foreground: #ffffff;
-    --background: #000000;
+  --foreground: #ffffff;
+  --background: #000000;
 }
 
 body {
-    color: var(--foreground);
-    background: var(--background);
-    font-family: "Geist", "Inter", sans-serif;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Geist", "Inter", sans-serif;
 }
 
 @layer utilities {
-    /* Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-    .no-scrollbar {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }

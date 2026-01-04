@@ -17,6 +17,6 @@ export const useCursor = () => {
   return {
     mousePosition,
     cursorVariant,
-    setCursorVariant,
+    setCursorVariant
   };
 };

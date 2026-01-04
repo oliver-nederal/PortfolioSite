@@ -9,7 +9,7 @@
     "lint": "next lint",
     "generate-image-data": "npx tsx src/scripts/generate-image-data.ts"
   },
-  "engines": { "node": "25.x" },
+  "engines": { "node": "24.x" },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.893.0",
     "@imagekit/next": "^2.1.2",
